@@ -44,22 +44,18 @@ const imageSet2 = [
 const Gallery = () => {
   const plugin1 = useRef(
     Autoplay({
-      delay: 2000, // change delay if needed
       stopOnInteraction: false,
       stopOnMouseEnter: false,
     })
   );
   const plugin2 = useRef(
     Autoplay({
-      delay: 3000, // change delay if needed
       stopOnInteraction: false,
       stopOnMouseEnter: false,
-  
     })
   );
   const plugin3 = useRef(
     Autoplay({
-      delay: 2000, // change delay if needed
       stopOnInteraction: false,
       stopOnMouseEnter: false,
     })
@@ -68,7 +64,9 @@ const Gallery = () => {
   return (
     <div className="py-8 md:py-16">
       <FadeInBlock>
-        <p className={`text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-12 ${playfairDisplay.className}`}>
+        <p
+          className={`text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-12 ${playfairDisplay.className}`}
+        >
           Gallery
         </p>
         <Carousel
@@ -100,7 +98,7 @@ const Gallery = () => {
 
       <FadeInBlock>
         <Carousel
-          opts={{ loop: true }}
+          opts={{ loop: true, direction: "rtl" }}
           plugins={[plugin2.current]}
           className="w-full max-w-[90vw] mx-auto mb-4 md:mb-8"
         >

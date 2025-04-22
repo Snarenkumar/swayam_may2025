@@ -1,17 +1,20 @@
 // src/app/api/chatbot/route.js
-import { callGeminiAPI } from '../../../lib/geminiClient';
+import { callGeminiAPI } from "../../../lib/geminiClient";
 
 export async function POST(request) {
   try {
-    console.log('Received chat request'); // Debugging
+    console.log("Received chat request"); // Debugging
     const body = await request.json();
     const { userInput } = body;
 
-    console.log('User input:', userInput); // Debugging
+    console.log("User input:", userInput); // Debugging
 
     if (!userInput) {
-      console.log('Missing userInput'); // Debugging
-      return new Response(JSON.stringify({ error: 'Missing userInput in request body' }), { status: 400 });
+      console.log("Missing userInput"); // Debugging
+      return new Response(
+        JSON.stringify({ error: "Missing userInput in request body" }),
+        { status: 400 }
+      );
     }
 
     const eventDetails = `
@@ -21,7 +24,7 @@ export async function POST(request) {
       - Event Name: Swayam 2025
       - Location: MVJ College of Engineering, Bangalore
       - Dates: [Insert Event Dates]
-      - Theme: VIRAASATH
+      - Theme: VIRASATH
       -Dress Code:
         Traditional or college‑approved casual wear.
         No ripped jeans, offensive prints, or beach‑wear.
@@ -110,15 +113,19 @@ export async function POST(request) {
       Please provide a helpful and detailed response. If the user's question is not related to Swayam 2025, engage in a friendly conversation.And make take the conversation towards the swayam.
     `;
 
-    console.log('Generated prompt:', eventDetails); // Debugging
+    console.log("Generated prompt:", eventDetails); // Debugging
 
     const result = await callGeminiAPI({ userInput: eventDetails });
-    console.log('API Response:', result); // Debugging
+    console.log("API Response:", result); // Debugging
 
-    const chatbotReply = result || 'No response from Gemini';
-    return new Response(JSON.stringify({ reply: chatbotReply }), { status: 200 });
+    const chatbotReply = result || "No response from Gemini";
+    return new Response(JSON.stringify({ reply: chatbotReply }), {
+      status: 200,
+    });
   } catch (error) {
-    console.error('API Route Error:', error);
-    return new Response(JSON.stringify({ error: 'Internal Server Error' }), { status: 500 });
+    console.error("API Route Error:", error);
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+    });
   }
 }
