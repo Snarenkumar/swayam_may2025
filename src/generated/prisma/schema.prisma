@@ -1,0 +1,111 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+model User {
+  id            String         @id @default(cuid())
+  name          String?
+  email         String         @unique
+  emailVerified DateTime?
+  image         String?
+  role          Role           @default(USER)
+  accounts      Account[]
+  sessions      Session[]
+  registrations Registration[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+enum Role {
+  ADMIN
+  USER
+  ORGANIZER
+}
+
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
+}
+
+model Event {
+  id             String         @id @default(uuid())
+  title          String
+  registrations  Registration[]
+  clubName       String
+  minPaticipants Int            @default(1)
+  maxPaticipants Int
+  club           Club           @relation(fields: [clubName], references: [name], onDelete: Cascade)
+
+  @@map("events")
+}
+
+model Participant {
+  id             String       @id @default(cuid())
+  registration   Registration @relation(fields: [registrationId], references: [id], onDelete: Cascade)
+  registrationId String
+  name           String
+  phone          String
+}
+
+model Club {
+  name   String  @id
+  events Event[]
+}
+
+model Registration {
+  id            String        @id @default(cuid())
+  eventId       String
+  userId        String
+  User          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  phone         String
+  usn           String
+  collegeName   String
+  participants  Participant[]
+  paymentAmount Float?
+  paymentId     String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime?     @updatedAt
+  event         Event         @relation(fields: [eventId], references: [id])
+  isCheckedIn   Boolean?      @default(false)
+  checkedInAt   DateTime?
+}
