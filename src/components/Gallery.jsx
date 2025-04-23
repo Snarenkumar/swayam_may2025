@@ -98,7 +98,9 @@ const Gallery = () => {
 
       <FadeInBlock>
         <Carousel
-          opts={{ loop: true, direction: "rtl" }}
+          opts={{
+            loop: true,
+          }}
           plugins={[plugin2.current]}
           className="w-full max-w-[90vw] mx-auto mb-4 md:mb-8"
         >

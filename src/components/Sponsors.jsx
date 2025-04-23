@@ -18,13 +18,13 @@ const playfairDisplay = Playfair_Display({
 });
 
 const sponsors = [
-  "/assets/MVJlogo.png",
-  "/assets/MVJlogo.png",
-  "/assets/MVJlogo.png",
-  "/assets/MVJlogo.png",
-  "/assets/MVJlogo.png",
-  "/assets/MVJlogo.png",
-  "/assets/MVJlogo.png",
+  "/assets/mvjLogo.png",
+  "/assets/mvjLogo.png",
+  "/assets/mvjLogo.png",
+  "/assets/mvjLogo.png",
+  "/assets/mvjLogo.png",
+  "/assets/mvjLogo.png",
+  "/assets/mvjLogo.png",
 ];
 
 const Sponsors = () => {
@@ -37,12 +37,14 @@ const Sponsors = () => {
   );
 
   return (
-    <div className="mb-[10rem]">
+    <div className="">
       <FadeInBlock>
-        <p className={`text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8 ${playfairDisplay.className}`}>
+        <p
+          className={`text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8 ${playfairDisplay.className}`}
+        >
           Sponsors
         </p>
-        <Carousel
+        {/* <Carousel
           opts={{
             loop: true,
           }}
@@ -68,7 +70,14 @@ const Sponsors = () => {
           </CarouselContent>
           <CarouselPrevious className="hidden md:!hidden" />
           <CarouselNext className="hidden md:!hidden" />
-        </Carousel>
+        </Carousel> */}
+        <Image
+          src={"/assets/mvjLogo.png"}
+          width={200}
+          height={200}
+          className="mx-auto my-12"
+          alt="Sponsors"
+        ></Image>
       </FadeInBlock>
     </div>
   );

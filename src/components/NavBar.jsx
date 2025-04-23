@@ -20,7 +20,7 @@ const playfairDisplay = Playfair_Display({
 
 const NavBar = () => {
   return (
-    <div>
+    <nav className="sticky top-0 lg:top-4 backdrop-blur-sm bg-[#5F4A37]/10 border border-[#5F4A37]/30 shadow-lg lg:rounded-xl z-40 max-w-5xl mx-auto ">
       <div
         className={`flex md:justify-evenly items-center p-3 relative ${playfairDisplay.className}`}
       >
@@ -79,7 +79,7 @@ const NavBar = () => {
           </DropdownMenu>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

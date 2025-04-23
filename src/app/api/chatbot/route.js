@@ -7,7 +7,7 @@ export async function POST(request) {
     const body = await request.json();
     const { userInput } = body;
 
-    console.log("User input:", userInput); // Debugging
+    // console.log("User input:", userInput); // Debugging
 
     if (!userInput) {
       console.log("Missing userInput"); // Debugging
@@ -23,7 +23,7 @@ export async function POST(request) {
 
       - Event Name: Swayam 2025
       - Location: MVJ College of Engineering, Bangalore
-      - Dates: [Insert Event Dates]
+      - Dates: Will be announced soon
       - Theme: VIRASATH
       -Dress Code:
         Traditional or college‑approved casual wear.
@@ -113,10 +113,10 @@ export async function POST(request) {
       Please provide a helpful and detailed response. If the user's question is not related to Swayam 2025, engage in a friendly conversation.And make take the conversation towards the swayam.
     `;
 
-    console.log("Generated prompt:", eventDetails); // Debugging
+    // console.log("Generated prompt:", eventDetails); // Debugging
 
     const result = await callGeminiAPI({ userInput: eventDetails });
-    console.log("API Response:", result); // Debugging
+    // console.log("API Response:", result); // Debugging
 
     const chatbotReply = result || "No response from Gemini";
     return new Response(JSON.stringify({ reply: chatbotReply }), {
