@@ -16,22 +16,22 @@ This platform is designed to showcase the vibrant culture, events, and spirit of
 
 ## 🚀 Team Members and Contributions
 
-| Name                                               | GitHub Username                             | GitHub Profile            | Contribution |
-| :------------------------------------------------- | :------------------------------------------ | :------------------------ | :----------- |
-| [Heerath Bhat](https://github.com/yogin1611)       | [Profile](https://github.com/yogin1611)     | President - SDC MVJCE     |
-| [Manojna M Bhat](https://github.com/ManojnaMBhat)  | [Profile](https://github.com/ManojnaMBhat)  | President - Inscribe      |
-| [Chinthan M](https://github.com/chinthanchris)     | [Profile](https://github.com/chinthanchris) | Vice President - Inscribe |
-| [Greeshma D J](https://github.com/GREEshmadj)      | [Profile](https://github.com/GREEshmadj)    | President - GDG MVJCE     |
-| [Rohan Badmi](https://github.com/badmirohan01)     | [Profile](https://github.com/badmirohan01)  | Frontend                  |
-| [Hemanth S. Savanth](https://github.com/AlphaDweb) | [Profile](https://github.com/AlphaDweb)     | Chatbot                   |
-| [C Varun](https://github.com/c-varun14)            | [Profile](https://github.com/c-varun14)     | Full Stack                |
-| [Chithra R](https://github.com/chith-123)          | [Profile](https://github.com/chith-123)     | Design                    |
-| [Divyaa Varshini G](https://github.com/divyaa2003) | [Profile](https://github.com/divyaa2003)    | Website Design            |
-| [S Naren Kumar](https://github.com/Snarenkumar)    | [Profile](https://github.com/Snarenkumar)   | Frontend                  |
-| [SRIKAR T](https://github.com/dis-craft)           | [Profile](https://github.com/dis-craft)     | Frontend                  |
-| [Suhana](https://github.com/suhan2006)             | [Profile](https://github.com/suhan2006)     | Design                    |
-| [Bikram Panda](https://github.com/bikram-0605)     | [Profile](https://github.com/bikram-0605)   | Media and Content         |
-| [Swaroop K G](https://github.com/Swaroop-KG)       | [Profile](https://github.com/Swaroop-KG)    | Frontend                  |
+| Name                                               | GitHub Username                             | Contribution              |
+| :------------------------------------------------- | :------------------------------------------ | :------------------------ | 
+| [Heerath Bhat](https://github.com/yogin1611)       | [yogin161](https://github.com/yogin1611)     | President - SDC MVJCE     |
+| [Manojna M Bhat](https://github.com/ManojnaMBhat)  | [ManojnaMBhat](https://github.com/ManojnaMBhat)  | President - Inscribe      |
+| [Chinthan M](https://github.com/chinthanchris)     | [chinthanchris](https://github.com/chinthanchris) | Vice President - Inscribe |
+| [Greeshma D J](https://github.com/GREEshmadj)      | [GREEshmadj](https://github.com/GREEshmadj)    | President - GDG MVJCE     |
+| [Rohan Badmi](https://github.com/badmirohan01)     | [badmirohan01](https://github.com/badmirohan01)  | Frontend                  |
+| [Hemanth S. Savanth](https://github.com/AlphaDweb) | [AlphaDweb](https://github.com/AlphaDweb)     | Chatbot                   |
+| [C Varun](https://github.com/c-varun14)            | [c-varun14](https://github.com/c-varun14)     | Full Stack                |
+| [Chithra R](https://github.com/chith-123)          | [chith-123](https://github.com/chith-123)     | Design                    |
+| [Divyaa Varshini G](https://github.com/divyaa2003) | [divyaa2003](https://github.com/divyaa2003)    | Website Design            |
+| [S Naren Kumar](https://github.com/Snarenkumar)    | [Snarenkumar](https://github.com/Snarenkumar)   | Frontend                  |
+| [SRIKAR T](https://github.com/dis-craft)           | [dis-craft](https://github.com/dis-craft)     | Frontend                  |
+| [Suhana](https://github.com/suhan2006)             | [suhan2006](https://github.com/suhan2006)     | Design                    |
+| [Bikram Panda](https://github.com/bikram-0605)     | [bikram-0605](https://github.com/bikram-0605)   | Media and Content         |
+| [Swaroop K G](https://github.com/Swaroop-KG)       | [Swaroop-KG](https://github.com/Swaroop-KG)    | Frontend                  |
 
 ---
 
