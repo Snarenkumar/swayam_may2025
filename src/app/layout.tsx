@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Open_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import NavBar from "@/components/NavBar";
 
 export const metadata: Metadata = {
   title: "SWAYAM 2025",
   description: "This is the home page of the Swayam-2025 fest",
 };
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 export default function RootLayout({
   children,
@@ -26,8 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`w-screen antialiased relative overflow-x-hidden bg-contain bg-center bg-[url('/assets/AndroidBackground.png')] md:bg-[url('/assets/Background.png')] bg-fixed text-[#5F4A37] ${openSans.className} scroll-smooth`}
       >
+        <NavBar />
         {children}
         <Footer />
       </body>

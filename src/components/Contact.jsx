@@ -1,29 +1,15 @@
 import Image from "next/image";
 import FadeInBlock from "./FadeInBlock";
-import { Playfair_Display } from "next/font/google";
-import { Open_Sans } from "next/font/google";
-
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
 
 const Contact = () => {
   return (
     <FadeInBlock>
-      <div
-        className={`bg-[#453517] text-[#f9efd1] py-10 px-4 sm:px-6 md:px-8 ${playfairDisplay.className}`}
-      >
+      <div className={`bg-[#453517] text-[#f9efd1] py-10 px-4 sm:px-6 md:px-8`}>
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl mb-5 sm:mb-10 md:mb-8">
           Contact Us
         </h2>
 
-        <div className={`max-w-4xl mx-auto ${openSans.className}`}>
+        <div className={`max-w-4xl mx-auto`}>
           {/* <FadeInBlock> */}
           <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-14">
             {/* Contact Information */}

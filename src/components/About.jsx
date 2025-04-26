@@ -1,34 +1,22 @@
 import Image from "next/image";
 import FadeInBlock from "@/components/FadeInBlock";
-import { Open_Sans, Playfair_Display } from "next/font/google";
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center gap-6 md:gap-8 px-4 md:px-6">
+    <div className="py-10 md:py-20 mx-auto container px-2">
       <FadeInBlock>
-        <p
-          className={`text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8 ${playfairDisplay.className}`}
-        >
+        <h2 className={`text-center text-3xl md:text-5xl lg:text-6xl mb-16`}>
           About
-        </p>
-        <div className="flex flex-col md:flex-row items-center gap-4">
-          <div className="order-2 md:order-1">
-            <h4
-              className={`text-xl sm:text-2xl py-2 md:py-3 text-center md:text-left ${playfairDisplay.className}`}
+        </h2>
+        <div className="flex flex-col-reverse md:flex-row items-center gap-4">
+          <div className="bg-[#453517]/15 rounded-lg p-6 w-full md:w-1/2">
+            <h3
+              className={`text-xl sm:text-2xl py-2 md:py-3 text-center md:text-left`}
             >
               About MVJ College Of Engineering
-            </h4>
+            </h3>
             <p
-              className={`w-full md:w-auto md:max-w-xl lg:max-w-2xl h-auto text-center md:text-left ${openSans.className}`}
+              className={`w-full md:w-auto md:max-w-xl lg:max-w-2xl h-auto text-center md:text-left`}
             >
               Founded in 1982 by the Venkatesha Education Society, MVJ College
               of Engineering has been a steadfast provider of quality education
@@ -46,7 +34,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="order-1 md:order-2 w-screen max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl">
+          <div className="w-full md:w-[45%]">
             <Image
               src="/assets/AboutImg1.png"
               alt="AboutImg1"
@@ -59,8 +47,8 @@ const About = () => {
       </FadeInBlock>
 
       <FadeInBlock>
-        <div className="flex flex-col md:flex-row items-center gap-4">
-          <div className="w-screen max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl">
+        <div className="flex flex-col md:flex-row items-center gap-4 my-12">
+          <div className="w-full md:w-[45%]">
             <Image
               src="/assets/aboutSwayam.png"
               alt="AboutSwayam"
@@ -69,14 +57,14 @@ const About = () => {
               className="w-full h-auto"
             />
           </div>
-          <div className="md:order-1 order-2">
-            <h4
-              className={`text-xl sm:text-2xl py-2 md:py-3 text-center md:text-left ${playfairDisplay.className}`}
+          <div className="bg-[#453517]/15 rounded-lg p-6 w-full md:w-1/2">
+            <h3
+              className={`text-xl sm:text-2xl py-2 md:py-3 text-center md:text-left`}
             >
               About Swayam
-            </h4>
+            </h3>
             <p
-              className={`w-full md:w-auto md:max-w-xl lg:max-w-2xl h-auto text-center md:text-left ${openSans.className}`}
+              className={`w-full md:w-auto md:max-w-xl lg:max-w-2xl h-auto text-center md:text-left`}
             >
               For years, SWAYAM has been a beacon of creativity and expression,
               bringing together the brightest minds and talents in a celebration
@@ -96,15 +84,15 @@ const About = () => {
       </FadeInBlock>
 
       <FadeInBlock>
-        <div className="flex flex-col md:flex-row items-center gap-4">
-          <div className="order-2 md:order-1">
-            <h4
-              className={`text-xl sm:text-2xl py-2 md:py-3 text-center md:text-left ${playfairDisplay.className}`}
+        <div className="flex flex-col-reverse md:flex-row items-center gap-4">
+          <div className="bg-[#453517]/15 rounded-lg p-6 w-full md:w-1/2">
+            <h3
+              className={`text-xl sm:text-2xl py-2 md:py-3 text-center md:text-left`}
             >
               About the Theme
-            </h4>
+            </h3>
             <p
-              className={`w-full md:w-auto md:max-w-xl lg:max-w-2xl h-auto text-center md:text-left ${openSans.className}`}
+              className={`w-full md:w-auto md:max-w-xl lg:max-w-2xl h-auto text-center md:text-left`}
             >
               VIRASATH, a vibrant blend of cultures and customs, the emblem of
               pride and motivation; ushers us to discover the rich artistic
@@ -120,7 +108,7 @@ const About = () => {
               orchestra of melodies.
             </p>
           </div>
-          <div className="order-1 md:order-2 w-screen max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl">
+          <div className="w-full md:w-[45%]">
             <Image
               src="/assets/AboutImg1.png"
               alt="AboutImg3"

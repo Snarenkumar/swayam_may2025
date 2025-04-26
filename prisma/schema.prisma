@@ -5,7 +5,6 @@ datasource db {
  
 generator client {
   provider = "prisma-client-js"  
-  output = "../node_modules/.prisma/client"
 }
  
 model User {
@@ -72,11 +71,20 @@ model Event {
   title                String
   registrations        Registration[]
   clubName String
-  minPaticipants     Int  @default(1)
-  maxPaticipants     Int  
+  minTeamMembers     Int  @default(1)
+  maxTeamMembers     Int  @default(1)
   club Club @relation(fields: [clubName], references: [name], onDelete: Cascade)
 
   @@map("events")
+}
+
+model Participants {
+  id  String        @id @default(cuid())
+  name String
+  usn   String
+  college String
+  registrationId String
+  registration  Registration  @relation(fields: [registrationId], references: [id], onDelete: Cascade)
 }
 
 model Club {
@@ -92,6 +100,7 @@ model Registration {
   phone               String
   usn                 String
   collegeName         String
+  participants      Participants[]
   paymentAmount       Float?
   paymentId           String?
   createdAt           DateTime      @default(now())
