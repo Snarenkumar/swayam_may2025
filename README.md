@@ -16,7 +16,7 @@ This platform is designed to showcase the vibrant culture, events, and spirit of
 
 ## 🚀 Team Members and Contributions
 
-| Name                                               | GitHub Username                             | Contribution              |
+| Name                                               | GitHub Username                             | Role              |
 | :------------------------------------------------- | :------------------------------------------ | :------------------------ | 
 | [Heerath Bhat](https://github.com/yogin1611)       | [yogin161](https://github.com/yogin1611)     | President - SDC MVJCE     |
 | [Manojna M Bhat](https://github.com/ManojnaMBhat)  | [ManojnaMBhat](https://github.com/ManojnaMBhat)  | President - Inscribe      |
