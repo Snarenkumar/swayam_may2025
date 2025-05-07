@@ -1,13 +1,20 @@
-import Navbar from "@/components/NavBar";
 
-const page = () => {
+import EventsSlider from "@/components/events/EventsSlider";
+import ClubEvents from "@/components/events/ClubEvents";
+import { Angkor } from "next/font/google";
+
+const angkor = Angkor({ subsets: ["latin"], weight: "400" });
+
+export default function EventsPage() {
   return (
-    <div
-      className={`min-h-screen bg-contain bg-center bg-[url('/assets/AndroidBackground.png')] md:bg-[url('/assets/Background.png')] bg-fixed text-[#5F4A37] scroll-smooth`}
+    <div 
+      className={`min-h-screen bg-contain bg-center bg-[url('/assets/AndroidBackground.png')] md:bg-[url('/assets/Background.png')] bg-fixed text-[#5F4A37] ${angkor.className} scroll-smooth`}
     >
-      <p className="text-center mt-5">Events will be Live Soon</p>
+      
+      <main className="container mx-auto px-4 py-6 ">
+        <EventsSlider />
+        <ClubEvents />
+      </main>
     </div>
   );
-};
-
-export default page;
+}

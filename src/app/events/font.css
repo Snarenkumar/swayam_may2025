@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaini+Purva&display=swap');
+
+.jaini-font {
+  font-family: 'Jaini Purva', cursive;
+}
+.pentagon {
+    width: 60px;
+    height: 50px;
+    background-color: #D3C9A2;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+
+  .custom-shadow {
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2), -4px 4px 15px rgba(0, 0, 0, 0.2);
+    /* Left + Right + Bottom only — no top shadow */
+    border-radius: 1.5rem; /* You can increase if you want even more rounding */
+  }
+ strong{
+    font-family: 'Agbalumo', cursive;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px; /* Adjust based on your design */
+    color: #5F4A37; /* Approximate from your image */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }  
