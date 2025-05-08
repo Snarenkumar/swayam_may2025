@@ -1,16 +1,16 @@
-import { Event } from '@/types/events';
-import Image from 'next/image';
+import { Event } from "@/types/events";
+import Image from "next/image";
 
 export default function EventCard({ event }: { event: Event }) {
   return (
-    <div 
+    <div
       className={`relative h-[500px] w-full max-w-4xl overflow-hidden rounded-3xl bg-cover bg-center shadow-xl`}
       style={{ backgroundImage: `url(/assets/clubs/${event.type}-bg.png)` }}
     >
       <div className="absolute inset-0 bg-black/30 " />
 
       <div className="relative z-10 h-full p-8 text-white">
-        {event.type === 'mega' ? (
+        {event.type === "mega" ? (
           <>
             <div className="flex justify-center">
               <h2 className="inline-block rounded-2xl bg-white px-8 py-2 text-2xl font-bold text-[#6e4a12] shadow-md">
@@ -41,7 +41,7 @@ export default function EventCard({ event }: { event: Event }) {
                 </button>
                 <ul className="space-y-2">
                   <li>Registration fee: ₹{event.registerInfo?.fee}</li>
-                  <li>Prize: {event.registerInfo?.prizes.join(', ')}</li>
+                  <li>Prize: {event.registerInfo?.prizes.join(", ")}</li>
                   <li>Date & Time: {event.registerInfo?.date}</li>
                   <li>Coordinator Contact: {event.registerInfo?.contact}</li>
                 </ul>
@@ -69,7 +69,7 @@ export default function EventCard({ event }: { event: Event }) {
               <div className="text-center">
                 <p className="mb-4">Get your ticket – Scan now!</p>
                 {event.qrCode && (
-                  <Image 
+                  <Image
                     src={event.qrCode}
                     alt="QR Code"
                     width={100}

@@ -67,24 +67,23 @@ model VerificationToken {
 }
 
 model Event {
-  id                   String         @id @default(uuid())
+  id                   String         @id @default(cuid())
   title                String
   registrations        Registration[]
   clubName String
-  minTeamMembers     Int  @default(1)
-  maxTeamMembers     Int  @default(1)
   club Club @relation(fields: [clubName], references: [name], onDelete: Cascade)
 
   @@map("events")
 }
 
-model Participants {
+model TeamMember {
   id  String        @id @default(cuid())
   name String
   usn   String
-  college String
+  collegeName String
   registrationId String
   registration  Registration  @relation(fields: [registrationId], references: [id], onDelete: Cascade)
+  @@unique([registrationId,usn])
 }
 
 model Club {
@@ -94,17 +93,18 @@ model Club {
 
 model Registration {
   id                  String        @id @default(cuid())
-  eventId             String
+  name  String
   userId              String
   User                User       @relation(fields: [userId], references: [id], onDelete: Cascade)
   phone               String
   usn                 String
   collegeName         String
-  participants      Participants[]
+  teamMembers      TeamMember[]
   paymentAmount       Float?
   paymentId           String?
   createdAt           DateTime      @default(now())
   updatedAt           DateTime?      @updatedAt
+  eventId             String
   event               Event         @relation(fields: [eventId], references: [id])
   isCheckedIn         Boolean?      @default(false)
   checkedInAt         DateTime?

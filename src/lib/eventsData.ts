@@ -1,8 +1,26 @@
+import { z } from "zod";
+
+export type clubsType =
+  | "Dhwani"
+  | "Nrityatrix"
+  | "Raagabhinaya"
+  | "Toastmasters"
+  | "Aakriti"
+  | "Saahitya";
+
+export const clubsSchema = z.enum([
+  "Dhwani",
+  "Nrityatrix",
+  "Raagabhinaya",
+  "Toastmasters",
+  "Aakriti",
+  "Saahitya",
+]);
 export const eventsData = {
   Dhwani: [
     {
       id: "clw3q9v6e000008l0h6qy7q1z",
-      no:1,
+      no: 1,
       name: "Vocal Vistar - Where every voice finds its spotlight",
       description:
         "Celebrate the power of melody in this solo singing event that brings out the soul of India’s musical heritage. Whether you prefer classical or contemporary, let your voice echo the spirit of VIRAASATH.",
@@ -11,10 +29,10 @@ export const eventsData = {
         "Time limit: 4 minutes (including setup).",
         "Use of pre-recorded background music is allowed, Live accompaniment is also allowed.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -27,7 +45,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e000108l0h6qy7q1z",
-      no:2,
+      no: 2,
       name: "SPIT FIRE - Ignite the stage with rhythm, rhymes and Beats!",
       description:
         "Showcase your lyrical mastery and rhythmic creativity in this electrifying rapping and beatboxing competition. Let your beats reflect the pulse of tradition meeting innovation.",
@@ -36,10 +54,10 @@ export const eventsData = {
         "3-minute performance limit.",
         "Lyrics must be original; any explicit content will lead to disqualification.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -52,7 +70,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e000208l0h6qy7q1z",
-      no:3,
+      no: 3,
       name: "RAAG RANG - Weaving Harmony Through the soul of Indian Music",
       description:
         "Unite in harmony and let your voices weave tales of tradition in this Indian group singing competition. Dive into the cultural melodies of VIRAASATH.",
@@ -61,10 +79,10 @@ export const eventsData = {
         "Time limit: 8 minutes (including Setup).",
         "Traditional Indian instruments are allowed.",
       ],
-      registration_fee: "₹600",
+      registration_fee: 600,
       prizes: {
-        first: "₹6,000",
-        second: "₹4,000",
+        first: "6,000",
+        second: "4,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -77,7 +95,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e000308l0h6qy7q1z",
-      no:4,
+      no: 4,
       name: "ECHOES AND BEATS - Where instruments Speak and Creativity Flows",
       description:
         "A showcase of instrumental mastery where music becomes the universal language. Let your instruments bring alive the spirit of VIRAASATH.",
@@ -86,10 +104,10 @@ export const eventsData = {
         "Time limit: 5 minutes.",
         "Pre-recorded backing tracks are not allowed.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -102,7 +120,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e000408l0h6qy7q1z",
-      no:5,
+      no: 5,
       name: "BATTLE OF BANDS: Clash of Talent, Power and Pure Music Energy",
       description:
         "The ultimate stage for rock stars to battle it out with electrifying performances. Bring your band and let your music leave the crowd in awe.",
@@ -111,10 +129,10 @@ export const eventsData = {
         "Performance time: 8 minutes (including setup).",
         "At least one original composition is encouraged.",
       ],
-      registration_fee: "₹1000",
+      registration_fee: 1000,
       prizes: {
-        first: "₹20,000",
-        second: "₹10,000",
+        first: "20,000",
+        second: "10,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -128,7 +146,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e000508l0h6qy7q1z",
-      no:6,
+      no: 6,
       name: "SYMPHONY SQUAD - Uniting Voices in Perfect Harmony",
       description:
         "A celebration of Western harmony as voices blend into a symphonic spectacle. This group singing event will echo the unity in diversity theme.",
@@ -137,10 +155,10 @@ export const eventsData = {
         "Time limit: 6 minutes.",
         "Explicit or offensive content is not allowed.",
       ],
-      registration_fee: "₹600",
+      registration_fee: 600,
       prizes: {
-        first: "₹6,000",
-        second: "₹4,000",
+        first: "6,000",
+        second: "4,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -155,7 +173,7 @@ export const eventsData = {
   Nrityatrix: [
     {
       id: "clw3q9v6e000608l0h6qy7q1z",
-      no:1,
+      no: 1,
       name: "Nritya Veer - The Brave Solo Performer[INDIAN SOLO]",
       description:
         "Celebrate the elegance of India’s traditional dance forms with mesmerizing moves and vibrant expressions. Let your performance reflect the cultural hues of VIRAASATH.",
@@ -164,10 +182,10 @@ export const eventsData = {
         "Time limit: 3+1 minute (including setup).",
         "Backdrops and hazardous props prohibited.",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -176,12 +194,11 @@ export const eventsData = {
       ],
       minTeamMembers: 1,
       maxTeamMembers: 1,
-      image:
-        "/assets/clubevents/nrityatrix/indian_solo.svg",
+      image: "/assets/clubevents/nrityatrix/indian_solo.svg",
     },
     {
       id: "clw3q9v6e000708l0h6qy7q1z",
-      no:2,
+      no: 2,
       name: "Urban Nasha - City Style Dance with a Desi Kick [WESTERN SOLO] ",
       description:
         "Step onto the stage and dazzle with high-energy moves that capture global dance styles. Unleash your creativity and rhythm in this solo event.",
@@ -190,10 +207,10 @@ export const eventsData = {
         "Time limit: 3+1 minute (including setup).",
         "Props and hazardous materials prohibited.",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -202,12 +219,11 @@ export const eventsData = {
       ],
       minTeamMembers: 1,
       maxTeamMembers: 1,
-      image:
-        "/assets/clubevents/nrityatrix/western_solo.svg",
+      image: "/assets/clubevents/nrityatrix/western_solo.svg",
     },
     {
       id: "clw3q9v6e000808l0h6qy7q1z",
-      no:3,
+      no: 3,
       name: "Viraasath ki Jugalbandi - Duet of Heritage [DUET DANCE]",
       description:
         "Two is better than one! Perform in perfect synchronization with your partner in a celebration of coordination and rhythm.",
@@ -216,10 +232,10 @@ export const eventsData = {
         "Time limit: 3+1 minute (including setup).",
         "Props allowed; hazardous materials prohibited.",
       ],
-      registration_fee: "₹320",
+      registration_fee: 320,
       prizes: {
-        first: "₹3,000",
-        second: "₹1,500",
+        first: "3,000",
+        second: "1,500",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -228,12 +244,11 @@ export const eventsData = {
       ],
       minTeamMembers: 2,
       maxTeamMembers: 2,
-      image:
-        "/assets/clubevents/nrityatrix/duet_dance.svg",
+      image: "/assets/clubevents/nrityatrix/duet_dance.svg",
     },
     {
       id: "clw3q9v6e000908l0h6qy7q1z",
-      no:4,
+      no: 4,
       name: "Taandav X Takedown - Where Legends Clash",
       description:
         "Bring the heat to the floor in this spontaneous dance showdown. Unpredictable beats and raw talent take center stage.",
@@ -241,10 +256,10 @@ export const eventsData = {
         "This is an individual event, conducted in 1 vs 1 format.",
         "Music will be played spontaneously on the spot.",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -253,12 +268,11 @@ export const eventsData = {
       ],
       minTeamMembers: 1,
       maxTeamMembers: 1,
-      image:
-        "/assets/clubevents/nrityatrix/battle.svg",
+      image: "/assets/clubevents/nrityatrix/battle.svg",
     },
     {
       id: "clw3q9v6e001008l0h6qy7q1z",
-      no:5,
+      no: 5,
       name: "Groove Riot [WESTERN GROUP]",
       description:
         "Showcase your team’s creativity and energy through captivating choreography that represents the vibrancy of Western dance styles.",
@@ -267,10 +281,10 @@ export const eventsData = {
         "Time limit: 5+2 minutes (including setup and conclusion).",
         "Props encouraged, hazardous materials prohibited.",
       ],
-      registration_fee: "₹1200",
+      registration_fee: 1200,
       prizes: {
-        first: "₹8,000",
-        second: "₹5,000",
+        first: "8,000",
+        second: "5,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -283,7 +297,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001108l0h6qy7q1z",
-      no:6,
+      no: 6,
       name: "SwarNatyam - Mega Event",
       description:
         "A grand spectacle combining drama, music, and dance into a thematic performance. Bring the spirit of VIRAASATH alive through your artistry.",
@@ -292,10 +306,10 @@ export const eventsData = {
         "Performance duration: 5+2 minutes.",
         "Props and costumes encouraged , hazardous materials prohibited.",
       ],
-      registration_fee: "₹1500",
+      registration_fee: 1500,
       prizes: {
-        first: "₹50,000",
-        second: "₹25,000",
+        first: "50,000",
+        second: "25,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -313,7 +327,7 @@ export const eventsData = {
   Raagabhinaya: [
     {
       id: "clw3q9v6e001208l0h6qy7q1z",
-      no:1,
+      no: 1,
       name: "Anubhoot - MIME GROUP",
       description:
         "Delve into the art of silent storytelling, where actions speak louder than words. Express emotions and narratives that transcend language barriers with finesse and creativity.",
@@ -322,10 +336,10 @@ export const eventsData = {
         "Time limit: 6+2 minutes(including setup).",
         "Pre-recorded music without lyrics is allowed.",
       ],
-      registration_fee: "₹600",
+      registration_fee: 600,
       prizes: {
-        first: "₹8,000",
-        second: "₹5,000",
+        first: "8,000",
+        second: "5,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -338,7 +352,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001308l0h6qy7q1z",
-      no:2,
+      no: 2,
       name: "Drishyapat - SHORT FILM MAKING",
       description:
         "Lights, camera, action! Create a cinematic masterpiece that tells a story of tradition and modernity. Channel your inner filmmaker.",
@@ -347,10 +361,10 @@ export const eventsData = {
         "Film duration: 6 minutes + 10 seconds.",
         "Topic provided on the spot; 24 hours provided for submission.",
       ],
-      registration_fee: "₹600",
+      registration_fee: 600,
       prizes: {
-        first: "₹8,000",
-        second: "₹5,000",
+        first: "8,000",
+        second: "5,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -363,7 +377,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001408l0h6qy7q1z",
-      no:3,
+      no: 3,
       name: "Jashn-e-Hasya - STAND-UP",
       description:
         "Bring the house down with your humor and wit in this solo stand-up comedy event. Make the audience laugh while reflecting the cultural essence of VIRAASATH.",
@@ -372,10 +386,10 @@ export const eventsData = {
         "Time limit: 4+1 minute (including setup & conclusion).",
         "No offensive content allowed.",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹4,000",
-        second: "₹3,000",
+        first: "4,000",
+        second: "3,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -388,7 +402,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001508l0h6qy7q1z",
-      no:4, 
+      no: 4,
       name: "Rangrekha - GRAPHIC DESIGNING",
       description:
         "Transform your ideas into stunning visuals that captivate and inspire. Let your creativity shine in this design competition.",
@@ -397,10 +411,10 @@ export const eventsData = {
         "Topic provided on the spot.",
         "Submit in JPEG, JPG, or PNG format within 24 hours.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹3,000",
-        second: "₹2,000",
+        first: "3,000",
+        second: "2,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -413,7 +427,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001608l0h6qy7q1z",
-      no:5,
+      no: 5,
       name: "Drishitkon - PHOTOGRAPHY",
       description:
         "Capture the spirit of VIRAASATH through your lens. Tell stories that words cannot express in this photography contest.",
@@ -422,10 +436,10 @@ export const eventsData = {
         "Images must be original and relevant to the theme.",
         "Basic editing allowed.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹3,000",
-        second: "₹2,000",
+        first: "3,000",
+        second: "2,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -438,7 +452,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001708l0h6qy7q1z",
-      no:6,
+      no: 6,
       name: "Ekanki - MONO ACTING",
       description:
         "Step into the spotlight and showcase your acting skills in this solo performance event. Convey emotions and stories through dramatic artistry.",
@@ -447,10 +461,10 @@ export const eventsData = {
         "Performance duration: 2+1 minutes.",
         "Any language permitted.",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹4,000",
-        second: "₹3,000",
+        first: "4,000",
+        second: "3,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -463,7 +477,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001808l0h6qy7q1z",
-      no:7,
+      no: 7,
       name: "Raahgiri - STREET PLAY",
       description:
         "Command the streets with impactful performances that bring societal issues to the forefront. Fuse energy and creativity to inspire change while honoring the values of VIRAASATH.",
@@ -472,10 +486,10 @@ export const eventsData = {
         "Time limit: 7+3 minutes (including setup & conclusion).",
         "Props allowed; electronic instruments prohibited.",
       ],
-      registration_fee: "₹800",
+      registration_fee: 800,
       prizes: {
-        first: "₹8,000",
-        second: "₹4,000",
+        first: "8,000",
+        second: "4,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -488,7 +502,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001908l0h6qy7q1z",
-      no:8,
+      no: 8,
       name: "Rangmanch - IMPROV",
       description:
         "Unleash your spontaneity and humor in this improvisation event where quick thinking takes the stage. Create magic on the spot.",
@@ -497,10 +511,10 @@ export const eventsData = {
         "Scenarios provided on the spot.",
         "Multiple entries from an institution are allowed.",
       ],
-      registration_fee: "₹300",
+      registration_fee: 300,
       prizes: {
-        first: "₹4,000",
-        second: "₹3,000",
+        first: "4,000",
+        second: "3,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -524,10 +538,10 @@ export const eventsData = {
         "Avoid hesitation, repetition, or deviation.",
         "The use of Queen’s English is encouraged.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹3,000",
-        second: "₹2,000",
+        first: "3,000",
+        second: "2,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -549,10 +563,10 @@ export const eventsData = {
         "Time limit: 5 minutes per participant.",
         "No profanity or personal attacks.",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹4,000",
-        second: "₹3,000",
+        first: "4,000",
+        second: "3,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -574,10 +588,10 @@ export const eventsData = {
         "Participants must stay within the specified boundaries.",
         "No collaboration between teams will be tolerated.",
       ],
-      registration_fee: "₹600",
+      registration_fee: 600,
       prizes: {
-        first: "₹8,000",
-        second: "₹5,000",
+        first: "8,000",
+        second: "5,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -599,10 +613,10 @@ export const eventsData = {
         "Time limit: 15 minutes per round.",
         "Topics provided just before the debate.",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹2,500",
-        second: "₹1,500",
+        first: "2,500",
+        second: "1,500",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -624,10 +638,10 @@ export const eventsData = {
         "Time Limit: 5 minutes to interact with the object and 30 minutes to write.",
         "Word Limit: 200 or 300 words.",
       ],
-      registration_fee: "₹150",
+      registration_fee: 150,
       prizes: {
-        first: "₹2,500",
-        second: "₹1,500",
+        first: "2,500",
+        second: "1,500",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -649,10 +663,10 @@ export const eventsData = {
         "Participants must bid for words and compose a poem.",
         "Time limit: 60 minutes.",
       ],
-      registration_fee: "₹400 per team",
+      registration_fee: 400,
       prizes: {
-        first: "₹4,000",
-        second: "₹2,000",
+        first: "4,000",
+        second: "2,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -675,10 +689,10 @@ export const eventsData = {
         "Twists revealed every 15 mins.",
         "Submission in digital (JPEG, PNG, or PDF).",
       ],
-      registration_fee: "₹300 per team",
+      registration_fee: 300,
       prizes: {
-        first: "₹4,000",
-        second: "₹2,000",
+        first: "4,000",
+        second: "2,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -696,10 +710,10 @@ export const eventsData = {
       description:
         "Kannada Kalarava is a vibrant event dedicated to showcasing the richness of Karnataka's culture, Kannada language as well as its literature. Participants will engage in a series of rounds that test their knowledge, creativity and fluency in Kannada.",
       rules: ["Team of 2 participants.", "4 round event."],
-      registration_fee: "₹300",
+      registration_fee: 300,
       prizes: {
-        first: "₹3,000",
-        second: "₹2,000",
+        first: "3,000",
+        second: "2,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -721,10 +735,10 @@ export const eventsData = {
         "Sessions divided into opening statements, moderated caucus, and resolutions.",
         "Stay in character of your assigned country.",
       ],
-      registration_fee: "₹500",
+      registration_fee: 500,
       prizes: {
-        first: "₹5,000",
-        second: "₹3,000",
+        first: "5,000",
+        second: "3,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -748,10 +762,10 @@ export const eventsData = {
         "Time limit: 2.5 hours + 30 minutes.",
         "Theme provided on-spot.",
       ],
-      registration_fee: "₹300",
+      registration_fee: 300,
       prizes: {
-        first: "₹3,000",
-        second: "₹1,500",
+        first: "3,000",
+        second: "1,500",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -773,10 +787,10 @@ export const eventsData = {
         "Time limit: 2.5 hours + 30 minutes.",
         "Theme: Announced in advance or provided on the spot.",
       ],
-      registration_fee: "₹300",
+      registration_fee: 300,
       prizes: {
-        first: "₹3,000",
-        second: "₹1,500",
+        first: "3,000",
+        second: "1,500",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -798,10 +812,10 @@ export const eventsData = {
         "Time limit: 2.5 hours + 30 minutes.",
         "Participants must bring their own ceramic objects (plate, mug, tile, or vase).",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -823,10 +837,10 @@ export const eventsData = {
         "Time limit: 2.5 hours + 30 minutes.",
         "Theme (if any) will be announced on the spot.",
       ],
-      registration_fee: "₹250",
+      registration_fee: 250,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -848,10 +862,10 @@ export const eventsData = {
         "Time limit: 2.5 hours + 30 minutes.",
         "Bring your own materials.",
       ],
-      registration_fee: "₹150",
+      registration_fee: 150,
       prizes: {
-        first: "₹1,500",
-        second: "₹800",
+        first: "1,500",
+        second: "800",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -873,10 +887,10 @@ export const eventsData = {
         "Time limit: 2.5 hours + 30 minutes.",
         "Only black pens, fine liners, and pencils are allowed.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹3,000",
-        second: "₹1,500",
+        first: "3,000",
+        second: "1,500",
       },
       date_time: "To be Updated",
       coordinators: [
@@ -900,10 +914,10 @@ export const eventsData = {
         "Minimum: 3 minutes, Maximum: 5 minutes.",
         "Incorporate all provided visual prompts.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [{ name: "Aadil", phone: "8610912825" }],
@@ -918,10 +932,10 @@ export const eventsData = {
       description:
         "Think Fast. Argue Both Sides. Adapt Instantly. A debate like no other, where you argue both sides of a motion. Quick thinking and adaptability are your best allies.",
       rules: ["Individual event.", "Switch stances on cue.", "2 Round event."],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [{ name: "Trisha", phone: "8904625443" }],
@@ -940,10 +954,10 @@ export const eventsData = {
         "Time limit: Maximum of 3 minutes.",
         "Use provided visuals or props effectively.",
       ],
-      registration_fee: "₹200",
+      registration_fee: 200,
       prizes: {
-        first: "₹2,000",
-        second: "₹1,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "To be Updated",
       coordinators: [{ name: "Preethi", phone: "7760868083" }],
@@ -952,16 +966,29 @@ export const eventsData = {
       image: "/assets/clubevents/toastmasters/elevate.svg",
     },
   ],
-  
 };
-export const getClubEvents = (
-  clubName:
-    | "Dhwani"
-    | "Nrityatrix"
-    | "Raagabhinaya"
-    | "Toastmasters"
-    | "Aakriti"
-    | "Saahitya"
-) => {
+export const getClubEvents = (clubName: clubsType) => {
   return eventsData[clubName];
 };
+
+export const getClubEvent = (clubName: clubsType, id: string) => {
+  const events = getClubEvents(clubName);
+  let index: number;
+  events.forEach((data) => {
+    if (data.id == id) index = data.no;
+  });
+  // @ts-expect-error Index will be defined due to for each loop
+  if (!index) throw new Error("Event not found");
+  return events[index - 1];
+};
+
+// export const someData = () => {
+//   const data = {};
+//   for (let club in eventsData) {
+//     data[club] = getClubEvents(club).map(({ id, name }) => ({
+//       id,
+//       title: name,
+//     }));
+//   }
+//   console.log(data);
+// };
