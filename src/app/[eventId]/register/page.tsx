@@ -1,7 +1,7 @@
 import EventSidebar from "@/components/eventRegistration/EventSidebar";
 import EventRegistration from "@/components/eventRegistration/RegistrationForm";
 import { authOptions } from "@/lib/auth";
-import { getClubEvent } from "@/lib/eventsData";
+import { clubsType, getClubEvent } from "@/lib/eventsData";
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
@@ -14,13 +14,7 @@ export default async function Page({
     eventId: string;
   }>;
   searchParams: Promise<{
-    clubName:
-      | "Dhwani"
-      | "Nrityatrix"
-      | "Raagabhinaya"
-      | "Toastmasters"
-      | "Aakriti"
-      | "Saahitya";
+    clubName: clubsType;
   }>;
 }) {
   const { eventId } = await params;
@@ -28,9 +22,14 @@ export default async function Page({
 
   const session = await getServerSession(authOptions);
   if (!session?.user.email || !session.user.id)
-    return <h1>You need to sign in with Google before continuing.</h1>;
+    return redirect(
+      `/api/auth/signin?callbackUrl=${
+        process.env.BASE_URL || "http://localhost:3000"
+      }/${eventId}/register?event=${clubName}`
+    );
   const event = getClubEvent(clubName, eventId);
-  if (!event) return <h1>Event not found</h1>;
+  if (!event) return <h1>The event you are looking for does not exist</h1>;
+
   const registedBefore = await prisma.registration.findFirst({
     where: {
       eventId,

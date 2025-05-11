@@ -18,14 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`w-screen antialiased relative overflow-x-hidden bg-contain bg-center bg-[url('/assets/AndroidBackground.png')] md:bg-[url('/assets/Background.png')] bg-fixed text-[#5F4A37] scroll-smooth`}
+        className={`w-screen antialiased min-h-screen relative overflow-x-hidden bg-contain bg-center bg-[url('/assets/AndroidBackground.png')] md:bg-[url('/assets/Background.png')] bg-fixed text-[#5F4A37] scroll-smooth`}
       >
         <NextAuthProvider>
           <NavBar />
           {children}
-          <Footer />
           <Toaster richColors />
         </NextAuthProvider>
+        <Footer />
       </body>
     </html>
   );

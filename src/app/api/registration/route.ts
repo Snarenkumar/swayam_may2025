@@ -10,7 +10,6 @@ export const POST = async (req: Request) => {
   try {
     const { searchParams } = new URL(req.url);
     const club = searchParams.get("clubName");
-    console.log(club);
     if (!club)
       return NextResponse.json(
         {
@@ -51,7 +50,6 @@ export const POST = async (req: Request) => {
           : undefined,
       },
     });
-    console.log(registration);
     return NextResponse.json(
       { messsage: "Successful", id: registration.id },
       { status: 201 }
@@ -74,13 +72,11 @@ export const DELETE = async (req: Request) => {
         { message: "You are not authorized to do this action" },
         { status: 401 }
       );
-    console.log(id);
     const registration = await prisma.registration.findFirst({
       where: {
         id,
       },
     });
-    console.log("Registration: ", registration);
     if (!registration)
       return NextResponse.json(
         { message: "The id you are looking for doesn't exist" },

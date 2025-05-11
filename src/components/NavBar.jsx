@@ -23,15 +23,15 @@ const NavBar = () => {
   // Use null as initial state to prevent hydration mismatch
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [isMounted, setIsMounted] = useState(false);
-  
+
   // Only run on client-side to prevent hydration issues
   useEffect(() => {
     // Set mounted state to true
     setIsMounted(true);
-    
+
     // Check authentication status
     // Example: fetch('/api/auth/status').then(res => res.json()).then(data => setIsLoggedIn(data.isAuthenticated))
-    
+
     // For now, always set to false as default
     setIsLoggedIn(false);
   }, []);
@@ -48,7 +48,7 @@ const NavBar = () => {
   // This ensures the button only renders on client side
   const AuthButton = () => {
     if (!isMounted) return null;
-    
+
     return isLoggedIn ? (
       <button
         onClick={handleLogout}
@@ -69,22 +69,18 @@ const NavBar = () => {
   // For mobile menu auth button
   const MobileAuthButton = () => {
     if (!isMounted) return null;
-    
+
     return isLoggedIn ? (
-      <DropdownMenuItem onClick={handleLogout}>
-        Logout
-      </DropdownMenuItem>
+      <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
     ) : (
-      <DropdownMenuItem onClick={handleLogin}>
-        Login
-      </DropdownMenuItem>
+      <DropdownMenuItem onClick={handleLogin}>Login</DropdownMenuItem>
     );
   };
 
   return (
-    <nav className="sticky top-0 z-40 w-full">
+    <nav className="sticky top-0 z-40 w-full lg:top-4">
       {/* Desktop Navigation */}
-      <div className="hidden md:block lg:top-4 backdrop-blur-sm bg-[#5F4A37]/10 border border-[#5F4A37]/30 shadow-lg lg:rounded-xl max-w-5xl mx-auto">
+      <div className="hidden md:block backdrop-blur-sm bg-[#5F4A37]/10 border border-[#5F4A37]/30 shadow-lg lg:rounded-xl max-w-5xl mx-auto">
         <div
           className={`flex justify-evenly items-center p-3 relative ${playfairDisplay.className}`}
         >
@@ -108,8 +104,8 @@ const NavBar = () => {
             </li>
             <li className="py-2">Brochure</li>
             <li className="flex items-center justify-center h-9">
-              <Link 
-                href={"/profile"} 
+              <Link
+                href={"/profile"}
                 className="flex items-center justify-center w-9 h-9 hover:bg-[#5F4A37]/10 rounded-full transition-colors"
                 title="Profile"
               >
@@ -117,15 +113,17 @@ const NavBar = () => {
               </Link>
             </li>
           </ul>
-          
+
           {/* Client-side only auth button */}
           <AuthButton />
         </div>
       </div>
-      
+
       {/* Mobile Navigation - Only profile and hamburger */}
       <div className="md:hidden backdrop-blur-sm bg-[#5F4A37]/10 border-b border-[#5F4A37]/30 shadow-lg">
-        <div className={`flex items-center justify-between px-4 py-2 ${playfairDisplay.className}`}>
+        <div
+          className={`flex items-center justify-between px-4 py-2 ${playfairDisplay.className}`}
+        >
           {/* Logo */}
           <div className="flex-shrink-0">
             <Image
@@ -135,18 +133,18 @@ const NavBar = () => {
               height={80}
             />
           </div>
-          
+
           {/* Mobile icons - Only profile and hamburger */}
           <div className="flex items-center gap-5">
             {/* Profile Link */}
-            <Link 
-              href="/profile" 
+            <Link
+              href="/profile"
               className="flex items-center justify-center w-10 h-10 text-[#5F4A37] hover:bg-[#5F4A37]/10 rounded-full transition-colors"
               title="Profile"
             >
               <User className="h-6 w-6" />
             </Link>
-            
+
             {/* Hamburger Menu */}
             <div className="flex items-center justify-center">
               <DropdownMenu>
@@ -181,7 +179,7 @@ const NavBar = () => {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  
+
                   {/* Client-side only mobile auth button */}
                   <MobileAuthButton />
                 </DropdownMenuContent>

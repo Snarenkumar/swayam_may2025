@@ -10,7 +10,7 @@ import {
   Trash2,
   X,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -22,6 +22,8 @@ import axios from "axios";
 import Script from "next/script";
 import { createOrderId } from "@/lib/createOrderId";
 import { Prisma } from "@prisma/client";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 let isFormSubmitted = false;
 // Keyframes for pulse animation
@@ -290,6 +292,7 @@ export default function EventRegistration({
               ...formData,
               eventId: id,
               userId,
+              paymentAmount: registration_fee,
             }
           );
           registrationId = register.data.id;
@@ -369,13 +372,6 @@ export default function EventRegistration({
         terms: "",
       });
     }
-  };
-
-  // Download receipt
-  const downloadReceipt = () => {
-    toast.success("Receipt downloaded", {
-      description: "Your registration receipt has been downloaded.",
-    });
   };
 
   return (
@@ -890,8 +886,8 @@ export default function EventRegistration({
                 Registration Complete!
               </h2>
               <p className="text-[#5f4a37]/80">
-                Thank you for registering for the We look forward to seeing you
-                there!
+                Thank you for registering for the event. We look forward to
+                seeing you there!
               </p>
             </div>
 
@@ -906,45 +902,84 @@ export default function EventRegistration({
               <div className="space-y-3">
                 <div>
                   <p className="text-sm text-[#5f4a37]/70">Event</p>
-                  <p className="font-medium">Tech Symposium 2025</p>
+                  <p className="font-medium">{name}</p>
                 </div>
 
-                <div>
+                {/* <div>
                   <p className="text-sm text-[#5f4a37]/70">Date & Time</p>
-                  <p className="font-medium">May 15, 2025 • 10:00 AM</p>
-                </div>
+                  <p className="font-medium"></p>
+                </div> */}
 
-                <div>
+                {/* <div>
                   <p className="text-sm text-[#5f4a37]/70">Venue</p>
                   <p className="font-medium">
                     Main Auditorium, University Campus
+                  </p>
+                </div> */}
+
+                <div>
+                  <h4 className="text-sm font-medium">Primary Contact</h4>
+                  <p className="text-sm ml-1">{formData.name}</p>
+                  <p className="text-sm ml-1 text-[#5f4a37]/70">
+                    {formData.phone}
+                  </p>
+                  <p className="text-sm ml-1 text-[#5f4a37]/70">
+                    {formData.usn} • {formData.collegeName}
                   </p>
                 </div>
 
                 <div>
                   <p className="text-sm text-[#5f4a37]/70">Team Size</p>
                   <p className="font-medium">
-                    {formData.teamMembers.length + 1} Members
+                    {formData.teamMembers.length
+                      ? "Solo Event"
+                      : `${formData.teamMembers.length + 1} members`}
                   </p>
                 </div>
+                {!(maxTeamMembers == 1) && (
+                  <>
+                    <div>
+                      <h4 className="text-sm font-medium">
+                        Team Members ({formData.teamMembers.length})
+                      </h4>
+                      {formData.teamMembers.length === 0 ? (
+                        <p className="text-sm text-[#5f4a37]/70">
+                          No additional team members
+                        </p>
+                      ) : (
+                        <div className="space-y-2 mt-2">
+                          {formData.teamMembers.map((member) => (
+                            <div key={member.id} className="text-sm">
+                              <p>{member.name}</p>
+                              <p className="text-[#5f4a37]/70">
+                                {member.usn} • {member.collegeName}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <Separator className="bg-[#e0d5c0]" />
+                  </>
+                )}
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button
-                onClick={downloadReceipt}
-                variant="outline"
-                className="border-[#5f4a37] text-[#5f4a37] hover:bg-[#5f4a37]/10"
+              <Link
+                href={"/profile"}
+                className={cn(
+                  buttonVariants({ variant: "default" }),
+                  "bg-[#5f4a37] hover:bg-[#4a3a2a] text-[#fff4d4]"
+                )}
               >
-                Download Receipt
-              </Button>
-              <Button
-                // onClick={addToCalendar}
-                className="bg-[#5f4a37] hover:bg-[#4a3a2a] text-[#fff4d4]"
-              >
-                Add to Calendar
-              </Button>
+                Go to profile
+              </Link>
             </div>
+            <p className="opacity-65 text-sm mt-1">
+              You can view all the events you have registered for in the profile
+              page.
+            </p>
           </div>
         )}
       </Card>

@@ -5,9 +5,16 @@ export type clubsType =
   | "Nrityatrix"
   | "Raagabhinaya"
   | "Toastmasters"
-  | "Aakriti"
-  | "Saahitya";
-
+  | "Saahitya"
+  | "Aakriti";
+export const clubsNames: clubsType[] = [
+  "Dhwani",
+  "Nrityatrix",
+  "Raagabhinaya",
+  "Toastmasters",
+  "Saahitya",
+  "Aakriti",
+];
 export const clubsSchema = z.enum([
   "Dhwani",
   "Nrityatrix",
@@ -34,7 +41,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Emmanuel Joseph", phone: "9513090776" },
         { name: "Gifta", phone: "8762362006" },
@@ -59,7 +66,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Vallabh Rao", phone: "9148573697" },
         { name: "Mukund", phone: "6364422548" },
@@ -84,7 +91,7 @@ export const eventsData = {
         first: "6,000",
         second: "4,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Sajid", phone: "9149559393" },
         { name: "Disha Bhat", phone: "9482190980" },
@@ -109,7 +116,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Aditi", phone: "9110245919" },
         { name: "Jason", phone: "9019431617" },
@@ -134,7 +141,7 @@ export const eventsData = {
         first: "20,000",
         second: "10,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Onkar", phone: "9234236426" },
         { name: "S Rithanya", phone: "8310541198" },
@@ -160,7 +167,7 @@ export const eventsData = {
         first: "6,000",
         second: "4,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Prakashika", phone: "9835598951" },
         { name: "Arpita", phone: "9019763381" },
@@ -187,7 +194,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Saniya", phone: "6363357424" },
         { name: "Thanu", phone: "7795190362" },
@@ -212,7 +219,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Rachitha", phone: "8050746071" },
         { name: "Sambhradha", phone: "8867054035" },
@@ -237,7 +244,7 @@ export const eventsData = {
         first: "3,000",
         second: "1,500",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Damini", phone: "8904075454" },
         { name: "Jeevan", phone: "7892066331" },
@@ -261,7 +268,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Charan", phone: "7892040913" },
         { name: "Chetan", phone: "6363205414" },
@@ -286,7 +293,7 @@ export const eventsData = {
         first: "8,000",
         second: "5,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Manasvini", phone: "9606793908" },
         { name: "Neethu", phone: "9686742350" },
@@ -311,7 +318,7 @@ export const eventsData = {
         first: "50,000",
         second: "25,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "R V Lehanya", phone: "9972977347" },
         { name: "Rahul B S", phone: "7338547046" },
@@ -341,7 +348,7 @@ export const eventsData = {
         first: "8,000",
         second: "5,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Vaishnavi", phone: "8123680295" },
         { name: "Prabiyot Singh", phone: "8899640581" },
@@ -366,7 +373,7 @@ export const eventsData = {
         first: "8,000",
         second: "5,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Kaviya", phone: "9483447393" },
         { name: "Saniya NB", phone: "9606326894" },
@@ -391,7 +398,7 @@ export const eventsData = {
         first: "4,000",
         second: "3,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Parnitha", phone: "9743306660" },
         { name: "Rohith", phone: "7975375180" },
@@ -416,7 +423,7 @@ export const eventsData = {
         first: "3,000",
         second: "2,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Narmada", phone: "9751308619" },
         { name: "Koustubh", phone: "7829992205" },
@@ -441,7 +448,7 @@ export const eventsData = {
         first: "3,000",
         second: "2,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Prasanna", phone: "7975158961" },
         { name: "Shreya", phone: "9591848646" },
@@ -466,7 +473,7 @@ export const eventsData = {
         first: "4,000",
         second: "3,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Joshua", phone: "7892256574" },
         { name: "Pranith", phone: "9019387446" },
@@ -491,7 +498,7 @@ export const eventsData = {
         first: "8,000",
         second: "4,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Heerath", phone: "9797243748" },
         { name: "Preetika", phone: "9622431393" },
@@ -516,7 +523,7 @@ export const eventsData = {
         first: "4,000",
         second: "3,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Aravind", phone: "9380016889" },
         { name: "Paul", phone: "7411508842" },
@@ -543,7 +550,7 @@ export const eventsData = {
         first: "3,000",
         second: "2,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Maria", phone: "6362748820" },
         { name: "Nadeem", phone: "6372525448" },
@@ -568,7 +575,7 @@ export const eventsData = {
         first: "4,000",
         second: "3,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Nabi", phone: "7061104766" },
         { name: "Hemapriya", phone: "9148779932" },
@@ -593,7 +600,7 @@ export const eventsData = {
         first: "8,000",
         second: "5,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Sravan", phone: "7204700369" },
         { name: "Vanshika", phone: "7892676862" },
@@ -618,7 +625,7 @@ export const eventsData = {
         first: "2,500",
         second: "1,500",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Sanjay", phone: "7892042237" },
         { name: "Kavyashree", phone: "9019798249" },
@@ -643,7 +650,7 @@ export const eventsData = {
         first: "2,500",
         second: "1,500",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Prajwal", phone: "6366732380" },
         { name: "Harsha", phone: "8660904600" },
@@ -668,7 +675,7 @@ export const eventsData = {
         first: "4,000",
         second: "2,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Mussarrat", phone: "9353801953" },
         { name: "Shivani", phone: "7760783977" },
@@ -694,7 +701,7 @@ export const eventsData = {
         first: "4,000",
         second: "2,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Aravind", phone: "9740181866" },
         { name: "Sanskritthi", phone: "9663395425" },
@@ -715,7 +722,7 @@ export const eventsData = {
         first: "3,000",
         second: "2,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Kavita", phone: "8660761775" },
         { name: "Darshan", phone: "8073797091" },
@@ -740,7 +747,7 @@ export const eventsData = {
         first: "5,000",
         second: "3,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Joel", phone: "8310819628" },
         { name: "Arjun Sharma", phone: "9119289604" },
@@ -767,7 +774,7 @@ export const eventsData = {
         first: "3,000",
         second: "1,500",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Mythri", phone: "8088836477" },
         { name: "Anish M", phone: "7406777828" },
@@ -792,7 +799,7 @@ export const eventsData = {
         first: "3,000",
         second: "1,500",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Anna Jovitha", phone: "8310616583" },
         { name: "Kushi Patil", phone: "9019722592" },
@@ -817,7 +824,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Azezzah", phone: "9242107871" },
         { name: "Dhanush", phone: "6360952142" },
@@ -842,7 +849,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Sneha Patil", phone: "9740780242" },
         { name: "Keerthana K A", phone: "8296072082" },
@@ -867,7 +874,7 @@ export const eventsData = {
         first: "1,500",
         second: "800",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Ritesh", phone: "9620571230" },
         { name: "Chandana S H", phone: "9739844329" },
@@ -892,7 +899,7 @@ export const eventsData = {
         first: "3,000",
         second: "1,500",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [
         { name: "Amithesh C", phone: "9113543283" },
         { name: "Sambhardha", phone: "8867054035" },
@@ -919,7 +926,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [{ name: "Aadil", phone: "8610912825" }],
       minTeamMembers: 1,
       maxTeamMembers: 1,
@@ -937,7 +944,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [{ name: "Trisha", phone: "8904625443" }],
       minTeamMembers: 1,
       maxTeamMembers: 1,
@@ -959,7 +966,7 @@ export const eventsData = {
         first: "2,000",
         second: "1,000",
       },
-      date_time: "To be Updated",
+      date_time: "Will be announced soon",
       coordinators: [{ name: "Preethi", phone: "7760868083" }],
       minTeamMembers: 1,
       maxTeamMembers: 1,
@@ -992,3 +999,27 @@ export const getClubEvent = (clubName: clubsType, id: string) => {
 //   }
 //   console.log(data);
 // };
+
+export const getEventDetailsById = (id: string) => {
+  for (const event of eventsData.Dhwani) {
+    if (event.id == id) return { event, club: "Dhwani" };
+  }
+  for (const event of eventsData.Aakriti) {
+    if (event.id == id) return { event, club: "Aakriti" };
+  }
+  for (const event of eventsData.Saahitya) {
+    if (event.id == id) {
+      return { event, club: "Saahitya" };
+    }
+  }
+  for (const event of eventsData.Toastmasters) {
+    if (event.id == id) return { event, club: "Toastmasters" };
+  }
+  for (const event of eventsData.Nrityatrix) {
+    if (event.id == id) return { event, club: "Nrityatrix" };
+  }
+  for (const event of eventsData.Raagabhinaya) {
+    if (event.id == id) return { event, club: "Raagabhinaya" };
+  }
+  return undefined;
+};
