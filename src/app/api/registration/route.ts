@@ -48,6 +48,7 @@ export const POST = async (req: Request) => {
         teamMembers: teamMembers?.length
           ? { createMany: { data: teamMembers } }
           : undefined,
+        clubName: club,
       },
     });
     return NextResponse.json(

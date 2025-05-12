@@ -89,6 +89,7 @@ model TeamMember {
 model Club {
   name String @id
   events  Event[]
+  registrations   Registration[]
 }
 
 model Registration {
@@ -100,6 +101,8 @@ model Registration {
   usn                 String
   collegeName         String
   teamMembers      TeamMember[]
+  clubName    String
+  club Club @relation(fields: [clubName], references: [name])
   paymentAmount       Float?
   paymentId           String?
   createdAt           DateTime      @default(now())

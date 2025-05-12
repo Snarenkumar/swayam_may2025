@@ -13,8 +13,10 @@ import {
   Check,
   AlertCircle,
   ChevronRight,
+  User,
 } from "lucide-react";
 import QRCode from "qrcode";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const getPaymentStatus = (paymentId: string | null) => {
   // if (!registration.paymentAmount) return "FREE";
@@ -104,20 +106,17 @@ const ProfilePage = async () => {
         <div className="md:col-span-4 lg:col-span-3">
           <div className="bg-[#fff4d4]/80 backdrop-blur-sm border border-[#5F4A37]/30 shadow-lg rounded-xl p-4 sm:p-6 md:sticky md:top-32">
             <div className="flex flex-col items-center text-center">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-[#5F4A37] mb-4">
-                {user.image ? (
-                  <Image
-                    src={user.image}
-                    alt={"Profile Image of the user"}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-[#5F4A37] flex items-center justify-center text-[#fff4d4] text-2xl sm:text-3xl font-bold">
-                    {user.name?.charAt(0)}
-                  </div>
-                )}
-              </div>
+              <Avatar className="w-24 h-24 mb-4">
+                <AvatarImage
+                  src={user.image || undefined}
+                  alt={user.name || "User Name"}
+                  height={100}
+                  width={100}
+                />
+                <AvatarFallback className="bg-foreground text-white">
+                  <User />
+                </AvatarFallback>
+              </Avatar>
               <h2 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">
                 {user.name}
               </h2>

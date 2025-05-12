@@ -1,11 +1,12 @@
 import Image from "next/image";
 import "../font.css"; // adjust path if needed
 import { getClubEvents } from "@/lib/eventsData";
+import Link from "next/link";
 
 export default function AakritiPage() {
   const event = getClubEvents("Aakriti");
   return (
-    <div className="bg-transparent text-[#5F4A37] font-serif min-h-screen pb-10">
+    <div className="bg-transparent text-[#5F4A37] font-serif min-h-screen">
       {/* Title */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 my-6 text-center">
         <Image
@@ -65,9 +66,12 @@ export default function AakritiPage() {
                 <p className="mb-2">
                   1st: {event.prizes.first} &nbsp; 2nd: {event.prizes.second}
                 </p>
-                <button className="bg-[#5d4037] text-white px-7 py-2 rounded-xl italic hover:bg-[#4e342e]">
+                <Link
+                  href={`/${event.id}/register?clubName=Aakriti`}
+                  className="bg-[#5d4037] text-white px-7 py-2 rounded-xl italic hover:bg-[#4e342e]"
+                >
                   Register now
-                </button>
+                </Link>
                 <div className="mt-2 text-sm ml-0 md:ml-12">
                   <strong>Event Coordinators :</strong>
                   {event.coordinators.map((coordinator, index) => (
@@ -82,7 +86,7 @@ export default function AakritiPage() {
         ))}
       </div>
       {/* Contact Us Footer */}
-      <footer className="bg-[#5F4A37] text-[#F9F4D7] py-8 mt-20 text-center rounded-t-3xl">
+      <section className="bg-[#5F4A37] text-[#F9F4D7] py-8 mt-20 text-center rounded-t-3xl">
         <h2 className="text-3xl sm:text-4xl font-bold jaini-font mb-4">
           CONTACT US
         </h2>
@@ -91,7 +95,7 @@ export default function AakritiPage() {
           <p>Aditya: 6361931910</p>
           <p>Pushpanjali: 9353361331</p>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }

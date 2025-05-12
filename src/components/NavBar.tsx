@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, User, Home, Calendar, FileText } from "lucide-react";
+import { Menu, Home, Calendar, FileText } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,8 +11,11 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Playfair_Display } from "next/font/google";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Button } from "./ui/button";
+import { usePathname } from "next/navigation";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -21,8 +24,9 @@ const playfairDisplay = Playfair_Display({
 
 const NavBar = () => {
   // Use null as initial state to prevent hydration mismatch
-  const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [isMounted, setIsMounted] = useState(false);
+  const { data } = useSession();
+  const pathname = usePathname();
 
   // Only run on client-side to prevent hydration issues
   useEffect(() => {
@@ -33,29 +37,32 @@ const NavBar = () => {
     // Example: fetch('/api/auth/status').then(res => res.json()).then(data => setIsLoggedIn(data.isAuthenticated))
 
     // For now, always set to false as default
-    setIsLoggedIn(false);
   }, []);
 
   const handleLogin = () => {
-    signIn("google");
+    signIn("google", {
+      callbackUrl: pathname,
+    });
   };
 
-  const handleLogout = () => {
-    // Backend integration: Handle logout here
-    // Example: fetch('/api/auth/logout', { method: 'POST' }).then(() => setIsLoggedIn(false))
-  };
-
-  // This ensures the button only renders on client side
   const AuthButton = () => {
     if (!isMounted) return null;
+    const user = data?.user;
 
-    return isLoggedIn ? (
-      <button
-        onClick={handleLogout}
-        className="hidden md:block cursor-pointer bg-[#5F4A37] text-[#f9efd1] h-10 max-w-xl px-12 font-extrabold tracking-widest rounded-full"
-      >
-        Logout
-      </button>
+    return user?.image && user?.name ? (
+      <Link href={"/profile"}>
+        <Avatar className="w-12 h-12 hover:cursor-pointer">
+          <AvatarImage
+            src={user.image}
+            alt={user.name}
+            height={100}
+            width={100}
+          />
+          <AvatarFallback className="bg-foreground text-white">
+            {user.name.charAt(0)}
+          </AvatarFallback>
+        </Avatar>
+      </Link>
     ) : (
       <button
         onClick={handleLogin}
@@ -69,11 +76,19 @@ const NavBar = () => {
   // For mobile menu auth button
   const MobileAuthButton = () => {
     if (!isMounted) return null;
+    const user = data?.user;
 
-    return isLoggedIn ? (
-      <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
+    return user?.image && user?.name ? (
+      <Avatar className="mr-3">
+        <AvatarImage src={user.image} alt={user.name} />
+        <AvatarFallback className="bg-white">
+          {user.name.charAt(0)}
+        </AvatarFallback>
+      </Avatar>
     ) : (
-      <DropdownMenuItem onClick={handleLogin}>Login</DropdownMenuItem>
+      <Button onClick={handleLogin} className="mr-3 bg-foreground">
+        Login
+      </Button>
     );
   };
 
@@ -82,16 +97,16 @@ const NavBar = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:block backdrop-blur-sm bg-[#5F4A37]/10 border border-[#5F4A37]/30 shadow-lg lg:rounded-xl max-w-5xl mx-auto">
         <div
-          className={`flex justify-evenly items-center p-3 relative ${playfairDisplay.className}`}
+          className={`flex justify-around items-center p-3 relative ${playfairDisplay.className}`}
         >
-          <div>
+          <Link href={"/"}>
             <Image
               src="/assets/mvjLogo.png"
               alt="MVJLogo"
               width={120}
               height={120}
             />
-          </div>
+          </Link>
           <ul className="flex gap-10 items-center cursor-pointer">
             <li className="py-2">
               <Link href={"/"}>Home</Link>
@@ -100,18 +115,17 @@ const NavBar = () => {
               <Link href={"/events"}>Events</Link>
             </li>
             <li className="py-2">
-              <Link href={"/registrations"}>Registrations</Link>
+              <Link href={"/schedule"}>Schedule</Link>
             </li>
-            <li className="py-2">Brochure</li>
-            <li className="flex items-center justify-center h-9">
-              <Link
-                href={"/profile"}
-                className="flex items-center justify-center w-9 h-9 hover:bg-[#5F4A37]/10 rounded-full transition-colors"
-                title="Profile"
+            <li className="py-2">
+              <a
+                href="https://drive.google.com/file/d/1BdcuJs5ZfkqpHIhpKKT1-JNsXI38ljUJ/view?usp=drivesdk"
+                target="_blank"
               >
-                <User className="h-5 w-5" />
-              </Link>
+                Brochure
+              </a>
             </li>
+            <li className="flex items-center justify-center h-9"></li>
           </ul>
 
           {/* Client-side only auth button */}
@@ -136,17 +150,10 @@ const NavBar = () => {
 
           {/* Mobile icons - Only profile and hamburger */}
           <div className="flex items-center gap-5">
-            {/* Profile Link */}
-            <Link
-              href="/profile"
-              className="flex items-center justify-center w-10 h-10 text-[#5F4A37] hover:bg-[#5F4A37]/10 rounded-full transition-colors"
-              title="Profile"
-            >
-              <User className="h-6 w-6" />
-            </Link>
-
             {/* Hamburger Menu */}
             <div className="flex items-center justify-center">
+              <MobileAuthButton />
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Menu className="h-7 w-7 text-[#5F4A37] cursor-pointer" />
@@ -181,7 +188,6 @@ const NavBar = () => {
                   <DropdownMenuSeparator />
 
                   {/* Client-side only mobile auth button */}
-                  <MobileAuthButton />
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

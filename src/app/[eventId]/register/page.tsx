@@ -23,12 +23,14 @@ export default async function Page({
   const session = await getServerSession(authOptions);
   if (!session?.user.email || !session.user.id)
     return redirect(
-      `/api/auth/signin?callbackUrl=${
+      `/api/auth/signin/google?callbackUrl=${
         process.env.BASE_URL || "http://localhost:3000"
-      }/${eventId}/register?event=${clubName}`
+      }/${eventId}/register?clubName=${clubName}`
     );
   const event = getClubEvent(clubName, eventId);
   if (!event) return <h1>The event you are looking for does not exist</h1>;
+  if (!clubName)
+    return <h1>Clubname mst be provided in the search query params</h1>;
 
   const registedBefore = await prisma.registration.findFirst({
     where: {

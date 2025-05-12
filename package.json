@@ -7,12 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "tsx prisma/seed.ts"
+    "seed": "prisma db seed"
   },
   "type": "module",
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
     "@prisma/client": "^6.6.0",
+    "@radix-ui/react-avatar": "^1.1.9",
     "@radix-ui/react-checkbox": "^1.3.1",
     "@radix-ui/react-dropdown-menu": "^2.1.7",
     "@radix-ui/react-label": "^2.1.4",
@@ -57,6 +58,6 @@
     "typescript": "^5.8.3"
   },
   "prisma": {
-    "seed": "ts-node --transpile-only prisma/seed.ts"
+    "seed": "tsx prisma/seed.ts"
   }
 }
