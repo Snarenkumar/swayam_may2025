@@ -39,8 +39,8 @@ const NavBar = () => {
     // For now, always set to false as default
   }, []);
 
-  const handleLogin = () => {
-    signIn("google", {
+  const handleLogin = async () => {
+    await signIn("google", {
       callbackUrl: pathname,
     });
   };
