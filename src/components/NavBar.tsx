@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Home, Calendar, FileText } from "lucide-react";
+import { Menu, Home, Calendar } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -79,12 +79,14 @@ const NavBar = () => {
     const user = data?.user;
 
     return user?.image && user?.name ? (
-      <Avatar className="mr-3">
-        <AvatarImage src={user.image} alt={user.name} />
-        <AvatarFallback className="bg-white">
-          {user.name.charAt(0)}
-        </AvatarFallback>
-      </Avatar>
+      <Link href={"/profile"}>
+        <Avatar className="mr-3">
+          <AvatarImage src={user.image} alt={user.name} />
+          <AvatarFallback className="bg-white">
+            {user.name.charAt(0)}
+          </AvatarFallback>
+        </Avatar>
+      </Link>
     ) : (
       <Button onClick={handleLogin} className="mr-3 bg-foreground">
         Login
@@ -180,10 +182,14 @@ const NavBar = () => {
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href="#" className="flex items-center gap-2">
-                      <FileText className="h-4 w-4" />
-                      <span>Brochure</span>
-                    </Link>
+                    <li className="py-2">
+                      <a
+                        href="https://drive.google.com/file/d/1BdcuJs5ZfkqpHIhpKKT1-JNsXI38ljUJ/view?usp=drivesdk"
+                        target="_blank"
+                      >
+                        Brochure
+                      </a>
+                    </li>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
 

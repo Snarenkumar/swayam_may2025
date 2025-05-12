@@ -21,6 +21,7 @@ export default async function Page({
   const clubName = (await searchParams).clubName;
 
   const session = await getServerSession(authOptions);
+  console.log(session);
   if (!session?.user.email || !session.user.id)
     return redirect(
       `/api/auth/signin/google?callbackUrl=${
@@ -42,7 +43,6 @@ export default async function Page({
     },
   });
 
-  if (registedBefore) console.log(registedBefore);
   if (registedBefore?.paymentId) return redirect("/events");
   return (
     <div className="min-h-screen bg-[#fff4d4] text-[#5f4a37] pb-16">

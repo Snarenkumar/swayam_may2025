@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   Calendar,
   ArrowLeft,
-  ChevronRight,
   Check,
   AlertCircle,
   CreditCard,
@@ -394,23 +393,6 @@ const RegistrationDetailsPage = async ({
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Contact Support */}
-          <div className="bg-[#fff4d4]/80 backdrop-blur-sm border border-[#5F4A37]/30 shadow-lg rounded-xl p-4 sm:p-5">
-            <div className="text-center">
-              <p className="text-sm text-[#5F4A37]/70 mb-3">
-                Need help with your registration? Have questions about the
-                event?
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-1 px-4 py-2 bg-[#5F4A37]/10 hover:bg-[#5F4A37]/20 text-[#5F4A37] rounded-lg font-medium text-sm transition-colors"
-              >
-                Contact Support
-                <ChevronRight className="h-4 w-4" />
-              </Link>
             </div>
           </div>
         </div>
