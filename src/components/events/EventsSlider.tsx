@@ -54,7 +54,13 @@ const event: Event = {
     fee: "1500",
     prizes: ["1st: ₹25,000", "2nd: ₹15,000"],
     date: "[To be Updated]",
-    contact: "[To be Updated]",
+    contact: [
+      "R V Lehanya: 9972977347",
+      "Rahul B S: 7338547046",
+      "Vidhi Jain: 8618415234",
+      "Drishti Luthra: 9103947046",
+      "Amog Anand Keur: 8431085574"
+    ]
   },
   venue: "MVJCE BasketBall Court",
   time: "to be updated",
@@ -77,7 +83,7 @@ export default function EventSlider() {
   // };
 
   return (
-    <div className="relative overflow-hidden py-6">
+    <div className="relative overflow-hidden px-2 sm:px-4 md:px-6 lg:px-10 py-6">
       {/* <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-lg bg-white/70 p-2 text-2xl "
@@ -85,14 +91,10 @@ export default function EventSlider() {
         &#10094;
       </button> */}
 
-      <div
-        className="flex transition-transform duration-500 ease-in-out"
-        // style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        <div key={event.id} className="flex-shrink-0 px-2 mx-auto">
+<div className="flex justify-center">
+        <div className="w-full max-w-4xl">
           <EventCard event={event} />
         </div>
-        {/* ))} */}
       </div>
 
       {/* <button

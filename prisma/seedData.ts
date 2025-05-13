@@ -36,7 +36,7 @@ const seedData = {
     },
     {
       id: "clw3q9v6e000808l0h6qy7q1z",
-      title: "Viraasath ki Jugalbandi - Duet of Heritage [DUET DANCE]",
+      title: "VIRASAT ki Jugalbandi - Duet of Heritage [DUET DANCE]",
     },
     {
       id: "clw3q9v6e000908l0h6qy7q1z",

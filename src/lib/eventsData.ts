@@ -30,7 +30,7 @@ export const eventsData = {
       no: 1,
       name: "Vocal Vistar - Where every voice finds its spotlight",
       description:
-        "Celebrate the power of melody in this solo singing event that brings out the soul of India’s musical heritage. Whether you prefer classical or contemporary, let your voice echo the spirit of VIRAASATH.",
+        "Celebrate the power of melody in this solo singing event that brings out the soul of India’s musical heritage. Whether you prefer classical or contemporary, let your voice echo the spirit of VIRASAT.",
       rules: [
         "Solo event.",
         "Time limit: 4 minutes (including setup).",
@@ -57,7 +57,7 @@ export const eventsData = {
       description:
         "Showcase your lyrical mastery and rhythmic creativity in this electrifying rapping and beatboxing competition. Let your beats reflect the pulse of tradition meeting innovation.",
       rules: [
-        "Solo or Duo Participation.",
+        "Solo  Participation.",
         "3-minute performance limit.",
         "Lyrics must be original; any explicit content will lead to disqualification.",
       ],
@@ -72,7 +72,7 @@ export const eventsData = {
         { name: "Mukund", phone: "6364422548" },
       ],
       minTeamMembers: 1,
-      maxTeamMembers: 2,
+      maxTeamMembers: 1,
       image: "/assets/clubevents/dhwani/spit_fire.svg",
     },
     {
@@ -80,7 +80,7 @@ export const eventsData = {
       no: 3,
       name: "RAAG RANG - Weaving Harmony Through the soul of Indian Music",
       description:
-        "Unite in harmony and let your voices weave tales of tradition in this Indian group singing competition. Dive into the cultural melodies of VIRAASATH.",
+        "Unite in harmony and let your voices weave tales of tradition in this Indian group singing competition. Dive into the cultural melodies of VIRASAT.",
       rules: [
         "Teams of 4-10 members.",
         "Time limit: 8 minutes (including Setup).",
@@ -105,7 +105,7 @@ export const eventsData = {
       no: 4,
       name: "ECHOES AND BEATS - Where instruments Speak and Creativity Flows",
       description:
-        "A showcase of instrumental mastery where music becomes the universal language. Let your instruments bring alive the spirit of VIRAASATH.",
+        "A showcase of instrumental mastery where music becomes the universal language. Let your instruments bring alive the spirit of VIRASAT.",
       rules: [
         "Individual or duo performances.",
         "Time limit: 5 minutes.",
@@ -183,7 +183,7 @@ export const eventsData = {
       no: 1,
       name: "Nritya Veer - The Brave Solo Performer[INDIAN SOLO]",
       description:
-        "Celebrate the elegance of India’s traditional dance forms with mesmerizing moves and vibrant expressions. Let your performance reflect the cultural hues of VIRAASATH.",
+        "Celebrate the elegance of India’s traditional dance forms with mesmerizing moves and vibrant expressions. Let your performance reflect the cultural hues of VIRASAT.",
       rules: [
         "Individual event.",
         "Time limit: 3+1 minute (including setup).",
@@ -231,7 +231,7 @@ export const eventsData = {
     {
       id: "clw3q9v6e000808l0h6qy7q1z",
       no: 3,
-      name: "Viraasath ki Jugalbandi - Duet of Heritage [DUET DANCE]",
+      name: "VIRASAT ki Jugalbandi - Duet of Heritage [DUET DANCE]",
       description:
         "Two is better than one! Perform in perfect synchronization with your partner in a celebration of coordination and rhythm.",
       rules: [
@@ -307,7 +307,7 @@ export const eventsData = {
       no: 7,
       name: "SwarNatyam - Mega Event",
       description:
-        "A grand spectacle combining drama, music, and dance into a thematic performance. Bring the spirit of VIRAASATH alive through your artistry.",
+        "A grand spectacle combining drama, music, and dance into a thematic performance. Bring the spirit of VIRASAT alive through your artistry.",
       rules: [
         "Teams of 8-17 members.",
         "Performance duration: 5+2 minutes.",
@@ -315,8 +315,8 @@ export const eventsData = {
       ],
       registration_fee: 1500,
       prizes: {
-        first: "50,000",
-        second: "25,000",
+        first: "25,000",
+        second: "15,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -387,13 +387,13 @@ export const eventsData = {
       no: 3,
       name: "Jashn-e-Hasya - STAND-UP",
       description:
-        "Bring the house down with your humor and wit in this solo stand-up comedy event. Make the audience laugh while reflecting the cultural essence of VIRAASATH.",
+        "Bring the house down with your humor and wit in this solo stand-up comedy event. Make the audience laugh while reflecting the cultural essence of VIRASAT.",
       rules: [
         "Individual event.",
         "Time limit: 4+1 minute (including setup & conclusion).",
         "No offensive content allowed.",
       ],
-      registration_fee: 200,
+      registration_fee: 250,
       prizes: {
         first: "4,000",
         second: "3,000",
@@ -437,7 +437,7 @@ export const eventsData = {
       no: 5,
       name: "Drishitkon - PHOTOGRAPHY",
       description:
-        "Capture the spirit of VIRAASATH through your lens. Tell stories that words cannot express in this photography contest.",
+        "Capture the spirit of VIRASAT through your lens. Tell stories that words cannot express in this photography contest.",
       rules: [
         "Individual event.",
         "Images must be original and relevant to the theme.",
@@ -487,7 +487,7 @@ export const eventsData = {
       no: 7,
       name: "Raahgiri - STREET PLAY",
       description:
-        "Command the streets with impactful performances that bring societal issues to the forefront. Fuse energy and creativity to inspire change while honoring the values of VIRAASATH.",
+        "Command the streets with impactful performances that bring societal issues to the forefront. Fuse energy and creativity to inspire change while honoring the values of VIRASAT.",
       rules: [
         "Teams of 12-20 members.",
         "Time limit: 7+3 minutes (including setup & conclusion).",
@@ -496,7 +496,7 @@ export const eventsData = {
       registration_fee: 800,
       prizes: {
         first: "8,000",
-        second: "5,000",
+        second: "4,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -521,7 +521,7 @@ export const eventsData = {
       registration_fee: 300,
       prizes: {
         first: "4,000",
-        second: "2,500",
+        second: "3,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -545,9 +545,9 @@ export const eventsData = {
         "Avoid hesitation, repetition, or deviation.",
         "The use of Queen’s English is encouraged.",
       ],
-      registration_fee: 200,
+      registration_fee: 150,
       prizes: {
-        first: "4,000",
+        first: "3,000",
         second: "2,000",
       },
       date_time: "Will be announced soon",
@@ -572,8 +572,8 @@ export const eventsData = {
       ],
       registration_fee: 200,
       prizes: {
-        first: "2,500",
-        second: "1,500",
+        first: "3,000",
+        second: "2,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -595,10 +595,10 @@ export const eventsData = {
         "Participants must stay within the specified boundaries.",
         "No collaboration between teams will be tolerated.",
       ],
-      registration_fee: 500,
+      registration_fee: 600,
       prizes: {
-        first: "5,000",
-        second: "3,000",
+        first: "8,000",
+        second: "5,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -620,10 +620,10 @@ export const eventsData = {
         "Time limit: 15 minutes per round.",
         "Topics provided just before the debate.",
       ],
-      registration_fee: 400,
+      registration_fee: 300,
       prizes: {
-        first: "2,500",
-        second: "1,500",
+        first: "4,000",
+        second: "2,500",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -647,8 +647,8 @@ export const eventsData = {
       ],
       registration_fee: 200,
       prizes: {
-        first: "2,500",
-        second: "1,500",
+        first: "3,000",
+        second: "2,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -672,8 +672,8 @@ export const eventsData = {
       ],
       registration_fee: 200,
       prizes: {
-        first: "2,000",
-        second: "1,000",
+        first: "3,000",
+        second: "2,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -696,10 +696,10 @@ export const eventsData = {
         "Twists revealed every 15 mins.",
         "Submission in digital (JPEG, PNG, or PDF).",
       ],
-      registration_fee: 300,
+      registration_fee: 150,
       prizes: {
-        first: "4,000",
-        second: "2,000",
+        first: "2,500",
+        second: "1,500",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -742,7 +742,7 @@ export const eventsData = {
         "Sessions divided into opening statements, moderated caucus, and resolutions.",
         "Stay in character of your assigned country.",
       ],
-      registration_fee: 500,
+      registration_fee: 350,
       prizes: {
         first: "5,000",
         second: "3,000",
@@ -788,7 +788,7 @@ export const eventsData = {
       no: 2,
       name: "Painted Smiles",
       description:
-        "Turn faces and bodies into vibrant canvases to express the spirit of VIRAASATH. Creativity and technique will set you apart in this artistic challenge.",
+        "Turn faces and bodies into vibrant canvases to express the spirit of VIRASAT. Creativity and technique will set you apart in this artistic challenge.",
       rules: [
         "Individual Participation.",
         "Time limit: 2.5 hours + 30 minutes.",
@@ -888,7 +888,7 @@ export const eventsData = {
       no: 6,
       name: "Mandala Magic",
       description:
-        "Explore patterns, symmetry, and spiritual symbolism through intricate mandala designs. The event emphasizes detail, harmony, originality, and adherence to the theme.",
+        "A Mandala Art Competition offers participants a chance to explore patterns, symmetry, and spiritual symbolism through intricate designs. It encourages mindfulness, creativity, and precision in creating visually captivating circular artwork. The event emphasizes detail, harmony, originality, and adherence to the theme provided.",
       rules: [
         "Individual competition.",
         "Time limit: 2.5 hours + 30 minutes.",
@@ -906,7 +906,7 @@ export const eventsData = {
       ],
       minTeamMembers: 1,
       maxTeamMembers: 1,
-      image: "/assets/clubevents/aakriti/rangoli.svg",
+      image: "/assets/clubevents/aakriti/mandala_magic.svg",
     },
   ],
   Toastmasters: [
@@ -915,7 +915,7 @@ export const eventsData = {
       no: 1,
       name: "Katha Yatra - Slide Thru Stories",
       description:
-        "Craft imaginative narratives driven by surprise visual prompts. Spin tales that captivate and leave a lasting impression on the audience.",
+        "The Ultimate Storytelling Challenge Craft imaginative narratives driven by surprise visual prompts. Spin tales that captivate and leave a lasting impression on the audience.",
       rules: [
         "Individual event.",
         "Minimum: 3 minutes, Maximum: 5 minutes.",
@@ -937,7 +937,7 @@ export const eventsData = {
       no: 2,
       name: "Virodh Vodh - Turn Coat Debate",
       description:
-        "Think Fast. Argue Both Sides. Adapt Instantly. A debate like no other, where you argue both sides of a motion. Quick thinking and adaptability are your best allies.",
+        "Think Fast. Argue Both Sides. Adapt Instantly. A debate like no other, where you argue both sides of a motion. Quick thinking and adaptability are your best allies in this dynamic contest.",
       rules: ["Individual event.", "Switch stances on cue.", "2 Round event."],
       registration_fee: 200,
       prizes: {
@@ -955,7 +955,7 @@ export const eventsData = {
       no: 3,
       name: "Sabha Sutradhar - Elevate your pitch",
       description:
-        "Deliver the ultimate pitch in this challenge where persuasion meets clarity. Convince the audience and judges of your vision in minutes.",
+        "The Ultimate Pitch Challenge Deliver the ultimate pitch in this challenge where persuasion meets clarity. Convince the audience and judges of your vision in minutes.",
       rules: [
         "Individual event.",
         "Time limit: Maximum of 3 minutes.",
