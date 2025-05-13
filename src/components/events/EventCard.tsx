@@ -1,13 +1,14 @@
 import { Event } from "@/types/events";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function EventCard({ event }: { event: Event }) {
   return (
     <div
-      className={`relative h-[500px] w-full max-w-4xl overflow-hidden rounded-3xl bg-cover bg-center shadow-xl`}
+      className={`relative w-full max-w-4xl overflow-hidden rounded-3xl bg-cover bg-center shadow-xl`}
       style={{ backgroundImage: `url(/assets/clubs/${event.type}-bg.png)` }}
     >
-      <div className="absolute inset-0 bg-black/30 " />
+      <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative z-10 h-full p-8 text-white">
         {event.type === "mega" ? (
@@ -20,12 +21,12 @@ export default function EventCard({ event }: { event: Event }) {
 
             <p className="my-6 text-xl">{event.description}</p>
 
-            <div className="flex flex-wrap gap-8">
-              <div className="flex-1 min-w-[300px]">
-                <button className="mb-4 rounded-full border-2 border-black bg-white px-6 py-2 font-bold text-[#6e4a12] shadow-md">
+            <div className="flex w-4/5 mx-auto items-start justify-start">
+              <div className="max-w-sm">
+                <button className="rounded-full border-2 border-black bg-white px-6 py-2 font-bold text-[#6e4a12] shadow-md">
                   RULES:
                 </button>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mt-3">
                   {event.rules?.map((rule, index) => (
                     <li key={index} className="flex items-start">
                       <span className="mr-2">●</span>
@@ -35,11 +36,16 @@ export default function EventCard({ event }: { event: Event }) {
                 </ul>
               </div>
 
-              <div className="flex-1 min-w-[300px]">
-                <button className="mb-4 rounded-full border-2 border-[#6e4a12] bg-white px-6 py-2 font-bold text-[#6e4a12] shadow-md">
+              <div className="max-w-sm">
+                <Link
+                  href={
+                    "/clw3q9v6e001108l0h6qy7q1z/register?clubName=Nrityatrix"
+                  }
+                  className="rounded-full border-2 border-[#6e4a12] hover:bg-foreground hover:text-white hover:cursor-pointer bg-white px-6 py-2 font-bold text-[#6e4a12] shadow-md"
+                >
                   Register Now ➤
-                </button>
-                <ul className="space-y-2">
+                </Link>
+                <ul className="mt-6">
                   <li>Registration fee: ₹{event.registerInfo?.fee}</li>
                   <li>Prize: {event.registerInfo?.prizes.join(", ")}</li>
                   <li>Date & Time: {event.registerInfo?.date}</li>
@@ -47,12 +53,6 @@ export default function EventCard({ event }: { event: Event }) {
                 </ul>
               </div>
             </div>
-
-            {event.freeEntry && (
-              <p className="mt-4 text-center text-xl font-bold text-green-300">
-                Free entry
-              </p>
-            )}
           </>
         ) : (
           <>

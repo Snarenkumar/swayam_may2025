@@ -93,7 +93,7 @@ export default function DhwaniPage() {
         </h2>
         <p className="text-2xl mb-2">Club Coordinators :-</p>
         <div className="text-base space-y-2 font-semibold">
-          <p>Rudransh:-6302573651</p>
+          {/* <p>Rudransh:-6302573651</p> */}
           <p>Yuvraj:-8971728640</p>
           <p>Manaswini:-8431546867</p>
         </div>

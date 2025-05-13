@@ -12,8 +12,8 @@ export const authOptions: AuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user, trigger }) {
-      if (trigger === "signIn" && user) {
+    async jwt({ token, user }) {
+      if (user) {
         const data = await prisma.user.findUnique({
           where: {
             id: user.id,

@@ -304,7 +304,7 @@ export const eventsData = {
     },
     {
       id: "clw3q9v6e001108l0h6qy7q1z",
-      no: 6,
+      no: 7,
       name: "SwarNatyam - Mega Event",
       description:
         "A grand spectacle combining drama, music, and dance into a thematic performance. Bring the spirit of VIRAASATH alive through your artistry.",
@@ -393,7 +393,7 @@ export const eventsData = {
         "Time limit: 4+1 minute (including setup & conclusion).",
         "No offensive content allowed.",
       ],
-      registration_fee: 250,
+      registration_fee: 200,
       prizes: {
         first: "4,000",
         second: "3,000",
@@ -468,7 +468,7 @@ export const eventsData = {
         "Performance duration: 2+1 minutes.",
         "Any language permitted.",
       ],
-      registration_fee: 250,
+      registration_fee: 200,
       prizes: {
         first: "4,000",
         second: "3,000",
@@ -496,7 +496,7 @@ export const eventsData = {
       registration_fee: 800,
       prizes: {
         first: "8,000",
-        second: "4,000",
+        second: "5,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -521,7 +521,7 @@ export const eventsData = {
       registration_fee: 300,
       prizes: {
         first: "4,000",
-        second: "3,000",
+        second: "2,500",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -547,7 +547,7 @@ export const eventsData = {
       ],
       registration_fee: 200,
       prizes: {
-        first: "3,000",
+        first: "4,000",
         second: "2,000",
       },
       date_time: "Will be announced soon",
@@ -570,10 +570,10 @@ export const eventsData = {
         "Time limit: 5 minutes per participant.",
         "No profanity or personal attacks.",
       ],
-      registration_fee: 250,
+      registration_fee: 200,
       prizes: {
-        first: "4,000",
-        second: "3,000",
+        first: "2,500",
+        second: "1,500",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -595,10 +595,10 @@ export const eventsData = {
         "Participants must stay within the specified boundaries.",
         "No collaboration between teams will be tolerated.",
       ],
-      registration_fee: 600,
+      registration_fee: 500,
       prizes: {
-        first: "8,000",
-        second: "5,000",
+        first: "5,000",
+        second: "3,000",
       },
       date_time: "Will be announced soon",
       coordinators: [
@@ -620,7 +620,7 @@ export const eventsData = {
         "Time limit: 15 minutes per round.",
         "Topics provided just before the debate.",
       ],
-      registration_fee: 250,
+      registration_fee: 400,
       prizes: {
         first: "2,500",
         second: "1,500",
@@ -645,7 +645,7 @@ export const eventsData = {
         "Time Limit: 5 minutes to interact with the object and 30 minutes to write.",
         "Word Limit: 200 or 300 words.",
       ],
-      registration_fee: 150,
+      registration_fee: 200,
       prizes: {
         first: "2,500",
         second: "1,500",
@@ -670,10 +670,10 @@ export const eventsData = {
         "Participants must bid for words and compose a poem.",
         "Time limit: 60 minutes.",
       ],
-      registration_fee: 400,
+      registration_fee: 200,
       prizes: {
-        first: "4,000",
-        second: "2,000",
+        first: "2,000",
+        second: "1,000",
       },
       date_time: "Will be announced soon",
       coordinators: [

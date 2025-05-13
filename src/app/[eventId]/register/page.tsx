@@ -19,6 +19,7 @@ export default async function Page({
 }) {
   const { eventId } = await params;
   const clubName = (await searchParams).clubName;
+  console.log(eventId, clubName);
 
   const session = await getServerSession(authOptions);
   console.log(session);

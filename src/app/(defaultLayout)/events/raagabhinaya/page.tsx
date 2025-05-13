@@ -10,7 +10,7 @@ export default function RaagabhinayaPage() {
       {/* Title */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 my-6 text-center">
         <Image
-          src="/assets/clubevents/raagabhinaya/raagabhinaya_logo.svg"
+          src="/assets/clubs/raagabhinaya.png"
           alt="RAAGABHINAYA"
           width={80}
           height={80}
