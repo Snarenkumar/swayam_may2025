@@ -17,7 +17,7 @@ const HeroSection = () => {
       <h1
         className={`text-center sm:mt-8 mt-5 text-6xl sm:text-6xl md:text-[6rem] font-extrabold`}
       >
-        VIRASATH
+        VIRASAT
       </h1>
 
       <button

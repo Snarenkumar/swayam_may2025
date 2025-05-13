@@ -99,9 +99,9 @@ const About = () => {
               treasures of our past and weave them into the fabric of our
               present. It is an exultation of dynasties, a promenade to the
               folklore and manifestations that exemplify who we are. Through
-              VIRAASATH, we bridge the classic with the contemporary, blending
-              the echoes of yesterday with the aspirations of tomorrow. With
-              every stride, a gateway to the mesmerizing bounty of eloquence, a
+              VIRASAT, we bridge the classic with the contemporary, blending the
+              echoes of yesterday with the aspirations of tomorrow. With every
+              stride, a gateway to the mesmerizing bounty of eloquence, a
               glorious euphony of ethereal splendour. Embark with us on a
               journey through the extensive and vibrant culture of India, where
               even the smallest pieces stir a variety of narratives and an
