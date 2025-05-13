@@ -41,9 +41,9 @@ import { Event } from "@/types/events";
 // ];
 const event: Event = {
   id: "1",
-  title: "Mega Event",
+  title: "SwarNatyam-Mega Event",
   description:
-    "A grand spectacle combining drama, music, and dance into a thematic performance. Bring the spirit of VIRAASATH alive through your artistry.",
+    "A grand spectacle combining drama, music, and dance into a thematic performance. Bring the spirit of VIRASAT alive through your artistry.",
   type: "mega",
   rules: [
     "Teams of 8–17 members.",
