@@ -54,7 +54,7 @@ export async function POST(request) {
       Yuvraj:-8971728640
       Manaswini:-8431546867
       Vocal Vistar- Where every voice finds its spotlight
-      Celebrate the power of melody in this solo singing event that brings out the soul of India’s musical heritage. Whether you prefer classical or contemporary, let your voice echo the spirit of VIRASAT.
+      Celebrate the power of melody in this solo singing event that brings out the soul of India's musical heritage. Whether you prefer classical or contemporary, let your voice echo the spirit of VIRASAT.
       ● Rules:
       ○ Solo event.
       ○ Time limit: 4 minutes (including setup)
@@ -123,7 +123,7 @@ export async function POST(request) {
       Ashmita: 7411061287
       Nritya Veer- The Brave Solo Performer
       [INDIAN SOLO DANCE COMPETITION]
-      Celebrate the elegance of India’s traditional dance forms with mesmerizing moves and vibrant expressions. Let your performance reflect the cultural hues of VIRASAT.
+      Celebrate the elegance of India's traditional dance forms with mesmerizing moves and vibrant expressions. Let your performance reflect the cultural hues of VIRASAT.
       ● Rules:
       ○ Individual event.
       ○ Time limit: 3+1 minute (including setup).
@@ -166,7 +166,7 @@ export async function POST(request) {
       ● Coordinator Contact: Charan : 7892040913; Chetan : 6363205414
       Groove Riot
       WESTERN GROUP DANCE COMPETITION
-      Showcase your team’s creativity and energy through captivating choreography that represents the vibrancy of Western dance styles.
+      Showcase your team's creativity and energy through captivating choreography that represents the vibrancy of Western dance styles.
       ● Rules:
       ○ Teams of 8-15 members.
       ○ Time limit: 5+2 minutes (including setup and conclusion).
@@ -307,11 +307,11 @@ export async function POST(request) {
       Maclin: 8217648197
       ChronoChatter
       [JAM- Just a Minute]
-      Test your wit and spontaneity in this fast-paced speaking challenge. Keep your thoughts sharp, your words sharper, and impress the audience in “JUST A MINUTE”.
+      Test your wit and spontaneity in this fast-paced speaking challenge. Keep your thoughts sharp, your words sharper, and impress the audience in "JUST A MINUTE".
       ● Rules:
       ○ Individual event.
       ○ Avoid hesitation, repetition, or deviation.
-      ○ The use of Queen’s English is encouraged.
+      ○ The use of Queen's English is encouraged.
       ● Registration fee:₹150
       ● Prize: 1st: ₹3,000, 2nd: ₹2,000
       ● Date & Time: [To be Updated]
@@ -359,7 +359,7 @@ export async function POST(request) {
       ○ Kavyashree:9019798249
       Inkwell of the Unseen
       [Sensory Writing Challenge]
-      From pen to paper, now from perception to prose, writing demands more than fleeting feelings in your mind. Don’t let your senses deceive you; go beyond impressions, unearthing truths that lie beneath. To be a writer is to shape raw sensations into vivid, unforgettable creations.
+      From pen to paper, now from perception to prose, writing demands more than fleeting feelings in your mind. Don't let your senses deceive you; go beyond impressions, unearthing truths that lie beneath. To be a writer is to shape raw sensations into vivid, unforgettable creations.
       ● Rules:
       ○ Individual event.
       ○ Time Limit: 5 minutes to interact with the object and 30 minutes to write.
@@ -371,8 +371,8 @@ export async function POST(request) {
       ○ Prajwal: 6366732380
       ○ Harsha: 8660904600
       The Poetic Gavel
-      [Poet’s Auction]
-      Step into the world of Slam Poetry but with a twist! The Poet’s Auction challenges participants to craft powerful, original poems while battling in an exhilarating auction for their words. Combine poetic artistry with strategy and performance as you bring your creations to life.
+      [Poet's Auction]
+      Step into the world of Slam Poetry but with a twist! The Poet's Auction challenges participants to craft powerful, original poems while battling in an exhilarating auction for their words. Combine poetic artistry with strategy and performance as you bring your creations to life.
       ● Rules:
       ○ Individual Event.
       ○ Participants must bid for words and compose a poem.
@@ -554,6 +554,9 @@ export async function POST(request) {
       ● Coordinator Contact: Preethi +91 77608 68083
       Note:-
       Details on Sponsors and Partners, Contact Details, Event Schedule, Workshop details and Brochure have not been finalised and will be updated as its finalised.
+
+      DJ Events:
+      - Details about DJ performances and events will be updated soon. Stay tuned for exciting announcements!
 
       When users ask about:
       1. **The main event**: provide details about Swayam 2025, its theme, location, dates, and registration link.
