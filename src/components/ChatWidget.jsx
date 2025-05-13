@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { saveChatMessage, initChatSession } from '../lib/firebase';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,8 @@ export default function ChatWidget() {
   ]);
   const [isTyping, setIsTyping] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [sessionId, setSessionId] = useState(null);
+  const [firebaseError, setFirebaseError] = useState(false);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -19,6 +22,49 @@ export default function ChatWidget() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Initialize chat session when the widget is first opened
+  useEffect(() => {
+    const initSession = async () => {
+      try {
+        setFirebaseError(false);
+        
+        // Try to get existing session ID from localStorage
+        let existingSessionId = localStorage.getItem('swayam_chat_session_id');
+        
+        // If no session exists, create a new one
+        if (!existingSessionId) {
+          existingSessionId = await initChatSession();
+          
+          if (!existingSessionId) {
+            console.error('Failed to create chat session');
+            setFirebaseError(true);
+            return;
+          }
+          
+          localStorage.setItem('swayam_chat_session_id', existingSessionId);
+        }
+        
+        setSessionId(existingSessionId);
+        
+        // Save the initial bot message to Firebase
+        if (messages.length === 1 && messages[0].sender === 'bot') {
+          const result = await saveChatMessage(existingSessionId, messages[0]);
+          if (!result) {
+            console.error('Failed to save initial message');
+            setFirebaseError(true);
+          }
+        }
+      } catch (error) {
+        console.error('Error initializing chat session:', error);
+        setFirebaseError(true);
+      }
+    };
+    
+    if (isOpen && !sessionId && !firebaseError) {
+      initSession();
+    }
+  }, [isOpen, sessionId, messages, firebaseError]);
 
   const handleToggle = () => {
     setIsOpen(prev => !prev);
@@ -32,12 +78,22 @@ export default function ChatWidget() {
   const handleSend = async () => {
     if (!userInput.trim()) return;
 
-    // Add user message
-    setMessages(prev => [...prev, { sender: 'user', text: userInput }]);
+    // Add user message to state
+    const userMessage = { sender: 'user', text: userInput };
+    setMessages(prev => [...prev, userMessage]);
     const input = userInput;
     setUserInput('');
 
     try {
+      // Save user message to Firebase if possible
+      if (sessionId && !firebaseError) {
+        const result = await saveChatMessage(sessionId, userMessage);
+        if (!result) {
+          console.warn('Failed to save user message to Firebase, continuing with chat');
+          // We don't set firebaseError here to allow the chat to continue locally
+        }
+      }
+      
       setIsTyping(true);
       const response = await fetch('/api/chatbot', {
         method: 'POST',
@@ -52,16 +108,33 @@ export default function ChatWidget() {
       // Format the bot's response
       const formattedResponse = formatBotResponse(data.reply);
       
-      setMessages(prev => [
-        ...prev,
-        { sender: 'bot', text: formattedResponse }
-      ]);
+      // Add bot response to state
+      const botMessage = { sender: 'bot', text: formattedResponse };
+      setMessages(prev => [...prev, botMessage]);
+      
+      // Save bot response to Firebase if possible
+      if (sessionId && !firebaseError) {
+        const result = await saveChatMessage(sessionId, botMessage);
+        if (!result) {
+          console.warn('Failed to save bot response to Firebase');
+        }
+      }
     } catch (error) {
       console.error('Error:', error);
-      setMessages(prev => [
-        ...prev,
-        { sender: 'bot', text: "Sorry, I'm having trouble connecting to the server. Please try again later." }
-      ]);
+      const errorMessage = { 
+        sender: 'bot', 
+        text: "Sorry, I'm having trouble connecting to the server. Please try again later." 
+      };
+      setMessages(prev => [...prev, errorMessage]);
+      
+      // Try to save error message to Firebase
+      if (sessionId && !firebaseError) {
+        try {
+          await saveChatMessage(sessionId, errorMessage);
+        } catch (saveError) {
+          console.error('Failed to save error message to Firebase:', saveError);
+        }
+      }
     } finally {
       setIsTyping(false);
     }
@@ -80,7 +153,37 @@ export default function ChatWidget() {
   };
 
   const handleClearChat = () => {
-    setMessages([{ sender: 'bot', text: 'Hi! How can I help you with Swayam 2025?' }]);
+    const initialMessage = { sender: 'bot', text: 'Hi! How can I help you with Swayam 2025?' };
+    setMessages([initialMessage]);
+    
+    // Create a new session
+    const resetSession = async () => {
+      try {
+        setFirebaseError(false);
+        const newSessionId = await initChatSession();
+        
+        if (!newSessionId) {
+          console.error('Failed to create new chat session');
+          setFirebaseError(true);
+          return;
+        }
+        
+        localStorage.setItem('swayam_chat_session_id', newSessionId);
+        setSessionId(newSessionId);
+        
+        // Save the initial bot message to Firebase
+        const result = await saveChatMessage(newSessionId, initialMessage);
+        if (!result) {
+          console.error('Failed to save initial message after reset');
+          setFirebaseError(true);
+        }
+      } catch (error) {
+        console.error('Error resetting chat session:', error);
+        setFirebaseError(true);
+      }
+    };
+    
+    resetSession();
   };
 
   return (
