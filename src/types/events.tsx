@@ -8,7 +8,7 @@ export interface Event {
     fee: string;
     prizes: string[];
     date: string;
-    contact: string;
+    contact: string[];
   };
   freeEntry?: boolean;
   venue: string;

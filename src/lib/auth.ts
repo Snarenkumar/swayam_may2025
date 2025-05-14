@@ -14,15 +14,18 @@ export const authOptions: AuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
+        token.id = user.id;
+        token.role = "USER";
+      }
+      if (!token.id && !user.id && (token.email || user.email)) {
         const data = await prisma.user.findUnique({
           where: {
-            id: user.id,
+            email: token.email || user.email || undefined,
           },
         });
-        console.log(data);
-        token.id = user.id;
-        token.role = data?.role || "USER";
+        if (data) token.id = data.id;
       }
+
       return token; // never return entire `user` object
     },
     async session({ session, token }) {

@@ -8,7 +8,7 @@ export default function SaahityaPage() {
   return (
     <div className="bg-transparent text-[#5F4A37] font-serif min-h-screen">
       {/* Title */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 my-6 text-center">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 my-6 text-center mt-8">
         <Image
           src="/assets/clubevents/saahitya/saahitya_logo.svg"
           alt="SAAHITYA"
@@ -22,7 +22,7 @@ export default function SaahityaPage() {
       </div>
 
       {/* Events */}
-      <div className="flex flex-col gap-15 items-center px-4 md:px-16 ">
+      <div className="flex flex-col gap-15 items-center px-4 md:px-16 mt-20">
         {event.map((event) => (
           <div
             key={event.no}

@@ -44,7 +44,7 @@ export function TicketDownload({
       <!-- Header with Logos -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10mm;">
         <div>
-          <img src="/assets/mvjlogo.png" alt="College Logo" style="height: 25mm; max-width: 40mm; object-fit: contain;" />
+          <img src="/assets/mvjLogo.png" alt="College Logo" style="height: 25mm; max-width: 40mm; object-fit: contain;" />
           <img src="/assets/SwayamLogo.png" alt="Event Logo" style="height: 25mm; max-width: 40mm; object-fit: contain;" />
         </div>
         <div style="margin-left:8mm">

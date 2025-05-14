@@ -47,6 +47,10 @@ const seedData = {
       title: "Groove Riot [WESTERN GROUP]",
     },
     {
+      id: "clw3q9v6e001018l0h6qy7q1z",
+      title: "Parampara - The Eternal Rhythm",
+    },
+    {
       id: "clw3q9v6e001108l0h6qy7q1z",
       title: "SwarNatyam - Mega Event",
     },

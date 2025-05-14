@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function NrityatrixPage() {
   const event = getClubEvents("Nrityatrix");
   return (
-    <div className="bg-transparent text-[#5F4A37] font-serif min-h-screen">
+    <div className="bg-transparent text-[#5F4A37] font-serif min-h-screen pt-8">
       {/* Title */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 my-6 text-center">
         <Image
@@ -22,7 +22,7 @@ export default function NrityatrixPage() {
       </div>
 
       {/* Events */}
-      <div className="flex flex-col gap-15 items-center px-4 md:px-16 ">
+      <div className="flex flex-col gap-15 items-center px-4 md:px-16 mt-20">
         {event.map((event) => {
           if (event.id == "clw3q9v6e001108l0h6qy7q1z") {
             return "";

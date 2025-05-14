@@ -78,12 +78,21 @@ const ProfilePage = async () => {
         process.env.BASE_URL || "http://localhost:3000"
       }/profile`
     );
-  const registrationsWithoutEvents = await prisma.registration.findMany({
+  const user = await prisma.user.findFirst({
     where: {
-      userId: session.user.id,
+      id: session.user.id,
+    },
+    include: {
+      registrations: true,
     },
   });
-  const qrPromises = registrationsWithoutEvents.map((reg) => getQr(reg.id));
+  if (!user)
+    return redirect(
+      `/api/auth/signin?callbackUrl=${
+        process.env.BASE_URL || "http://localhost:3000"
+      }/profile`
+    );
+  const qrPromises = user.registrations.map((reg) => getQr(reg.id));
 
   // 2. Await them all
   const qrDataUrls = await Promise.all(qrPromises);
@@ -92,14 +101,13 @@ const ProfilePage = async () => {
     event?: Event;
     club?: string;
     qr: string;
-  })[] = registrationsWithoutEvents.map((registration, idx) => {
+  })[] = user.registrations.map((registration, idx) => {
     return {
       ...registration,
       ...getEventDetailsById(registration.eventId),
       qr: qrDataUrls[idx],
     };
   });
-  const user = session.user;
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 sm:pt-16 min-h-[80vh]">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">

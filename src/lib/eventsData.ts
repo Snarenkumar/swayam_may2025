@@ -303,6 +303,31 @@ export const eventsData = {
       image: "/assets/clubevents/nrityatrix/western_group.svg",
     },
     {
+      id: "clw3q9v6e001018l0h6qy7q1z",
+      no: 6,
+      name: "Parampara – The Eternal Rhythm",
+      description:
+        "Parampara is a vibrant celebration of India’s rich cultural tapestry through the timeless language of classical dance. Rooted in ancient traditions, our performance brings together the grace of Bharatanatyam, the rhythm of Kathak, and the expression of Odissi (or your chosen style), weaving stories from mythology, nature, and devotion.",
+      rules: [
+        "Teams of 8-12 members.",
+        "Time limit: 5+1",
+        "Props encouraged, hazardous materials prohibited.",
+      ],
+      registration_fee: 1200,
+      prizes: {
+        first: "8,000",
+        second: "5,000",
+      },
+      date_time: "Will be announced soon",
+      coordinators: [
+        { name: "Sree lekshmi S Nair", phone: "7204940315" },
+        { name: "Anjana R", phone: "9148037010" },
+      ],
+      minTeamMembers: 8,
+      maxTeamMembers: 12,
+      image: "/assets/clubevents/nrityatrix/western_group.svg",
+    },
+    {
       id: "clw3q9v6e001108l0h6qy7q1z",
       no: 7,
       name: "SwarNatyam - Mega Event",
@@ -980,6 +1005,7 @@ export const getClubEvents = (clubName: clubsType) => {
 
 export const getClubEvent = (clubName: clubsType, id: string) => {
   const events = getClubEvents(clubName);
+  console.log(events);
   let index: number;
   events.forEach((data) => {
     if (data.id == id) index = data.no;

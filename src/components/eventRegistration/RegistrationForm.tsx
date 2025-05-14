@@ -313,7 +313,7 @@ export default function EventRegistration({
           },
           handler: async function (response: any) {
             try {
-              const paymentResponse = await axios.post("/api/verifyOrder", {
+              await axios.post("/api/verifyOrder", {
                 razorpay_order_id: orderId,
                 razorpay_payment_id: response.razorpay_payment_id,
                 razorpay_signature: response.razorpay_signature,
@@ -321,7 +321,6 @@ export default function EventRegistration({
               });
 
               toast.success("Payment was Successful!");
-              console.log(paymentResponse.data);
               setIsComplete(true);
             } catch (error) {
               alert("Payment verification failed. Please contact support.");
@@ -723,7 +722,7 @@ export default function EventRegistration({
               onClick={addTeamMember}
               variant="outline"
               className="w-full border-dashed border-chartring-chart-4 text-[#5f4a37] hover:bg-chartring-chart-4/10 mb-8"
-              disabled={formData.teamMembers.length >= 3}
+              disabled={formData.teamMembers.length + 1 == maxTeamMembers}
             >
               + Add Team Member
             </Button>
@@ -821,16 +820,16 @@ export default function EventRegistration({
                   onCheckedChange={handleTermsChange}
                   className="mt-1 border-chartring-chart-4 data-[state=checked]:bg-chartring-chart-4 data-[state=checked]:text-white"
                 />
-                <Label htmlFor="terms" className="text-sm">
+                <Label htmlFor="terms" className="text-sm block">
                   I agree to the{" "}
                   <a href="#" className="text-chartring-chart-4 underline">
-                    terms and conditions
+                    Rules and regulations
                   </a>{" "}
-                  and consent to the processing of my personal information as
-                  described in the{" "}
-                  <a href="#" className="text-chartring-chart-4 underline">
+                  of the fest Swayam
+                  {/* and consent to the processing of my personal information as described in the{" "} */}
+                  {/* <a href="#" className="text-chartring-chart-4 underline">
                     privacy policy
-                  </a>
+                  </a> */}
                   .
                 </Label>
               </div>

@@ -59,8 +59,8 @@ const event: Event = {
       "Rahul B S: 7338547046",
       "Vidhi Jain: 8618415234",
       "Drishti Luthra: 9103947046",
-      "Amog Anand Keur: 8431085574"
-    ]
+      "Amog Anand Keur: 8431085574",
+    ],
   },
   venue: "MVJCE BasketBall Court",
   time: "to be updated",
@@ -91,7 +91,7 @@ export default function EventSlider() {
         &#10094;
       </button> */}
 
-<div className="flex justify-center">
+      <div className="flex justify-center">
         <div className="w-full max-w-4xl">
           <EventCard event={event} />
         </div>

@@ -44,7 +44,7 @@ export default async function Page({
     },
   });
 
-  if (registedBefore?.paymentId) return redirect("/events");
+  if (registedBefore?.paymentId) return redirect("/profile");
   return (
     <div className="min-h-screen bg-[#fff4d4] text-[#5f4a37] pb-16">
       <header className="bg-[#5f4a37] text-[#fff4d4] py-6 px-4 md:px-6 mb-8">
