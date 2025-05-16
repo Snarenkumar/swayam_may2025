@@ -32,7 +32,9 @@ const Contact = () => {
             {/* Email Information */}
             <div className="bg-[#5a471f] bg-opacity-30 p-4 rounded-lg md:self-start">
               <h3 className="text-sm mb-2 font-medium">Email</h3>
-              <p className="py-1 break-words">helpdesk@mvjce.edu.in</p>
+              <p className="py-1 break-words">
+                dean-appliedscience@mvjce.edu.in
+              </p>
 
               {/* Optional: Add more contact methods */}
               <div className="mt-4">

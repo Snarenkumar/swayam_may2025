@@ -43,7 +43,7 @@ export default function DhwaniPage() {
                 alt={event.name}
                 width={400}
                 height={500}
-                className="rounded-md md:ml-6 -mt-10 md:-mt-20"
+                className="rounded-md mx-auto ml-3"
               />
               <div className="ml-3 text-black font-bold">
                 <p className="mb-2">

@@ -43,7 +43,7 @@ export default function SaahityaPage() {
                 alt={event.name}
                 width={300}
                 height={400}
-                className="rounded-md md:ml-6"
+                className="rounded-md mx-auto ml-3"
               />
               <div className="ml-5 text-black font-bold">
                 <p className="mb-2">

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Home, Calendar } from "lucide-react";
+import { Menu, Home, Calendar, BookOpen, Grid } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,17 +10,11 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { Playfair_Display } from "next/font/google";
 import { signIn, useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
 
 const NavBar = () => {
   // Use null as initial state to prevent hydration mismatch
@@ -39,7 +33,8 @@ const NavBar = () => {
     // For now, always set to false as default
   }, []);
 
-  const handleLogin = async () => {
+  const handleLogin = async (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     await signIn("google", {
       callbackUrl: pathname,
     });
@@ -98,9 +93,7 @@ const NavBar = () => {
     <nav className="sticky top-0 z-40 w-full lg:top-4">
       {/* Desktop Navigation */}
       <div className="hidden md:block backdrop-blur-sm bg-[#5F4A37]/10 border border-[#5F4A37]/30 shadow-lg lg:rounded-xl max-w-5xl mx-auto">
-        <div
-          className={`flex justify-around items-center p-3 relative ${playfairDisplay.className}`}
-        >
+        <div className={`flex justify-around items-center p-3 relative`}>
           <Link href={"/"}>
             <Image
               src="/assets/mvjLogo.png"
@@ -121,7 +114,7 @@ const NavBar = () => {
             </li>
             <li className="py-2">
               <a
-                href="https://drive.google.com/file/d/1BdcuJs5ZfkqpHIhpKKT1-JNsXI38ljUJ/view?usp=drivesdk"
+                href="https://drive.google.com/file/d/1Ddkp4EpatrkbigeUWE_Vo0Nvd2JkCswX/view?usp=drivesdk"
                 target="_blank"
               >
                 Brochure
@@ -137,9 +130,7 @@ const NavBar = () => {
 
       {/* Mobile Navigation - Only profile and hamburger */}
       <div className="md:hidden backdrop-blur-sm bg-[#5F4A37]/10 border-b border-[#5F4A37]/30 shadow-lg">
-        <div
-          className={`flex items-center justify-between px-4 py-2 ${playfairDisplay.className}`}
-        >
+        <div className={`flex items-center justify-between px-4 py-2`}>
           {/* Logo */}
           <div className="flex-shrink-0">
             <Image
@@ -161,7 +152,7 @@ const NavBar = () => {
                   <Menu className="h-7 w-7 text-[#5F4A37] cursor-pointer" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
-                  className={`w-48 bg-[#f9efd1] text-[#5F4A37] mr-5 ${playfairDisplay.className}`}
+                  className={`w-48 bg-[#f9efd1] text-[#5F4A37] mr-5`}
                 >
                   <DropdownMenuItem asChild>
                     <Link href="/" className="flex items-center gap-2">
@@ -172,28 +163,31 @@ const NavBar = () => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <Link href="/events" className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4" />
+                      <Grid className="h-4 w-4" />
                       <span>Events</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href="/registrations">Registrations</Link>
+                    <Link href="/schedule" className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4" />
+                      <span>Schedule</span>
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <li className="py-2">
                       <a
-                        href="https://drive.google.com/file/d/1BdcuJs5ZfkqpHIhpKKT1-JNsXI38ljUJ/view?usp=drivesdk"
+                        className="flex items-center gap-2"
+                        href="https://drive.google.com/file/d/1Ddkp4EpatrkbigeUWE_Vo0Nvd2JkCswX/view?usp=drivesdk"
                         target="_blank"
                       >
+                        <BookOpen className="h-4 w-4" />
                         Brochure
                       </a>
                     </li>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-
-                  {/* Client-side only mobile auth button */}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

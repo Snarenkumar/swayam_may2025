@@ -18,34 +18,49 @@ export function TicketDownload({
   const [isGenerating, setIsGenerating] = useState(false);
 
   const generateTicketContent = async () => {
+    // Calculate the minimum height based on team members count
+    // More aggressive scaling for larger teams
+    const baseHeight = 297; // A4 height in mm
+    const extraHeightPerMember = 15; // More mm per member
+    const minHeight = `${Math.max(
+      baseHeight,
+      baseHeight + (registration.teamMembers.length - 5) * extraHeightPerMember
+    )}mm`;
+
     const container = document.createElement("div");
     Object.assign(container.style, {
       width: "210mm",
-      minHeight: "297mm",
+      minHeight: minHeight,
       padding: "15mm 20mm",
       backgroundColor: "#fff4d4",
       color: "#5f4a37",
-      fontFamily: "'Helvetica Neue', Arial, sans-serif",
-      position: "fixed",
+      fontFamily: "'Open Sans', Arial, sans-serif",
+      position: "absolute", // Changed from fixed to absolute
       left: "-10000px",
+      top: 0,
       boxSizing: "border-box",
     });
 
+    // Generate QR code with larger dimensions and proper scaling
     const qrCodeDataURL = await QRCode.toDataURL(registration.id, {
-      width: 150,
-      margin: 1,
+      width: 200, // Increased from 150
+      margin: 2,
+      scale: 8, // Explicit scale factor
       color: {
         dark: "#5f4a37ff",
         light: "#fff4d400",
       },
     });
 
+    // Handle team members display
+    const teamMembersContent = renderTeamMembers(registration.teamMembers);
+
     container.innerHTML = `
       <!-- Header with Logos -->
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10mm;">
+      <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10mm;">
         <div>
-          <img src="/assets/mvjLogo.png" alt="College Logo" style="height: 25mm; max-width: 40mm; object-fit: contain;" />
-          <img src="/assets/SwayamLogo.png" alt="Event Logo" style="height: 25mm; max-width: 40mm; object-fit: contain;" />
+          <img src="/assets/mvjLogo.png" alt="College Logo" style="height: 20mm; width: auto; object-fit: contain" />
+          <img src="/assets/SwayamLogo.png" alt="Event Logo" style="height: 20mm; width: auto; object-fit: contain;" />
         </div>
         <div style="margin-left:8mm">
           <h1 style="font-size: 24pt; margin: 0; font-weight: 700; letter-spacing: -0.5pt;">
@@ -60,7 +75,7 @@ export function TicketDownload({
       <!-- Main Content -->
       <div style="display: flex; gap: 15mm;">
         <!-- Left Column -->
-        <div style="flex: 1;">
+        <div style="flex: 1; overflow: visible;">
           <!-- Participant Details -->
           <section style="margin-bottom: 8mm;">
             <h2 style="font-size: 16pt; margin: 0 0 4mm 0; font-weight: 600; text-transform: uppercase;">
@@ -83,25 +98,11 @@ export function TicketDownload({
           </section>
 
           <!-- Team Members -->
-          <section>
+          <section style="margin-bottom: 8mm;">
             <h2 style="font-size: 16pt; margin: 0 0 4mm 0; font-weight: 600; text-transform: uppercase;">
               Team Members (${registration.teamMembers.length})
             </h2>
-            <ul style="list-style: none; padding: 0; margin: 0; font-size: 12pt;">
-              ${registration.teamMembers
-                .map(
-                  (member) => `
-                <li style="margin: 0 0 4mm 0; padding: 3mm; background: rgba(95,74,55,0.05); border-radius: 2mm;">
-                  <strong style="display: block; margin-bottom: 1mm; font-size: 13pt;">${member.name}</strong>
-                  <div style="font-size: 11pt;">
-                    <p style="margin: 0 0 1mm 0;"><strong>USN:</strong> ${member.usn}</p>
-                    <p style="margin: 0;"><strong>College:</strong> ${member.collegeName}</p>
-                  </div>
-                </li>
-              `
-                )
-                .join("")}
-            </ul>
+            ${teamMembersContent}
           </section>
         </div>
 
@@ -109,7 +110,7 @@ export function TicketDownload({
         <div style="width: 70mm; flex-shrink: 0;">
           <!-- QR Code Section -->
           <div style="background: white; padding: 5mm; border-radius: 3mm; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 5mm; text-align: center;">
-            <img src="${qrCodeDataURL}" style="width: 100%; max-width: 50mm; height: auto; display: block; margin: 0 auto;" />
+            <img src="${qrCodeDataURL}" style="width: 50mm; height: 50mm; display: block; margin: 0 auto; image-rendering: pixelated;" />
             <p style="font-size: 10pt; margin: 3mm 0 0 0; color: #666;">Scan to verify registration</p>
           </div>
 
@@ -124,9 +125,7 @@ export function TicketDownload({
             }</p>
             ${
               registration.paymentId
-                ? `
-              <p style="font-size: 11pt; margin: 0;"><strong>Transaction ID:</strong> ${registration.paymentId}</p>
-            `
+                ? `<p style="font-size: 11pt; margin: 0;"><strong>Transaction ID:</strong> ${registration.paymentId}</p>`
                 : ""
             }
           </div>
@@ -148,7 +147,7 @@ export function TicketDownload({
       </div>
 
       <!-- Footer Section -->
-      <div style="margin-top: 10mm; padding-top: 5mm; border-top: 2px solid #5f4a37;">
+      <div style="margin-top: 15mm; padding-top: 5mm; border-top: 2px solid #5f4a37;">
         <div style="display: flex; gap: 10mm;">
           <!-- Prizes -->
           <div style="flex: 1;">
@@ -172,11 +171,11 @@ export function TicketDownload({
               ${event.coordinators
                 .map(
                   (coord) => `
-                <li style="margin: 0 0 2mm 0;">
-                  <strong>${coord.name}</strong><br/>
-                  ${coord.phone}
-                </li>
-              `
+                  <li style="margin: 0 0 2mm 0;">
+                    <strong>${coord.name}</strong><br/>
+                    ${coord.phone}
+                  </li>
+                `
                 )
                 .join("")}
             </ul>
@@ -188,11 +187,7 @@ export function TicketDownload({
             <ul style="list-style: disc; padding-left: 5mm; margin: 0; font-size: 11pt;">
               ${event.rules
                 .slice(0, 3)
-                .map(
-                  (rule) => `
-                <li style="margin: 0 0 2mm 0;">${rule}</li>
-              `
-                )
+                .map((rule) => `<li style="margin: 0 0 2mm 0;">${rule}</li>`)
                 .join("")}
             </ul>
           </div>
@@ -208,26 +203,76 @@ export function TicketDownload({
     return container;
   };
 
+  // Function to handle team members display - improved for many members
+  const renderTeamMembers = (teamMembers: TeamMember[]) => {
+    // Always use a more compact display for consistency
+    return `
+      <div style="width: 100%;">
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 11pt; display: grid; grid-template-columns: 1fr; gap: 2mm;">
+          ${teamMembers
+            .map(
+              (
+                member,
+                index
+              ) => ` <li id=${index} style="margin: 0 0 4mm 0; padding: 3mm; background: rgba(95,74,55,0.05); border-radius: 2mm;">
+                  <strong style="display: block; margin-bottom: 1mm; font-size: 13pt;">${member.name}</strong>
+                  <div style="font-size: 11pt;">
+                    <p style="margin: 0 0 1mm 0;"><strong>USN:</strong> ${member.usn}</p>
+                    <p style="margin: 0;"><strong>College:</strong> ${member.collegeName}</p>
+                  </div>
+                </li>
+              `
+            )
+            .join("")}
+        </ul>
+      </div>
+    `;
+  };
+
   const downloadPDF = async () => {
     setIsGenerating(true);
     try {
       const ticketContent = await generateTicketContent();
       document.body.appendChild(ticketContent);
 
+      // Calculate the actual height required based on team members
+      const teamMemberRows = registration.teamMembers.length;
+      const extraHeight = Math.max(0, (teamMemberRows - 5) * 15);
+      const pdfHeight = 297 + extraHeight; // A4 height + extra
+
       const canvas = await html2canvas(ticketContent, {
-        scale: 2,
+        scale: 2, // Higher scale for better quality
         logging: false,
         useCORS: true,
-        backgroundColor: null,
-        removeContainer: true,
+        backgroundColor: "#fff4d4",
         allowTaint: true,
-        // letterRendering: true,
+        height: ticketContent.scrollHeight,
+        windowHeight: ticketContent.scrollHeight,
+        onclone: (clonedDoc, element) => {
+          // Force the height to match the content
+          element.style.height = `${element.scrollHeight}px`;
+        },
       });
 
       document.body.removeChild(ticketContent);
 
-      const pdf = new jsPDF("p", "mm", "a4");
-      pdf.addImage(canvas, "PNG", 0, 0, 210, 297, undefined, "FAST");
+      // Create PDF with dynamic dimensions
+      const imgWidth = 210; // A4 width in mm
+      const pdfWidth = imgWidth;
+
+      // Calculate height to maintain aspect ratio
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      // Create PDF with appropriate dimensions
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        format: [pdfWidth, Math.max(pdfHeight, imgHeight)], // Use calculated height
+      });
+
+      // Add the image to the PDF, respecting the aspect ratio
+      pdf.addImage(canvas, "PNG", 0, 0, pdfWidth, imgHeight, undefined, "FAST");
+
       pdf.save(`${event.name.replace(/[^a-z0-9]/gi, "_")}_Ticket.pdf`);
     } catch (error) {
       console.error("PDF generation failed:", error);

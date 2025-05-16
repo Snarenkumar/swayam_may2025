@@ -94,7 +94,7 @@ const About = () => {
             <p
               className={`w-full md:w-auto md:max-w-xl lg:max-w-2xl h-auto text-center md:text-left`}
             >
-              VIRASATH, a vibrant blend of cultures and customs, the emblem of
+              VIRASAT, a vibrant blend of cultures and customs, the emblem of
               pride and motivation; ushers us to discover the rich artistic
               treasures of our past and weave them into the fabric of our
               present. It is an exultation of dynasties, a promenade to the
@@ -110,7 +110,7 @@ const About = () => {
           </div>
           <div className="w-full md:w-[45%]">
             <Image
-              src="/assets/AboutImg1.png"
+              src="/assets/about-theme.png"
               alt="AboutImg3"
               width={600}
               height={600}

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { Toaster } from "@/components/ui/sonner";
 import { NextAuthProvider } from "@/components/NextAuthProvider";
+import ChatWidget from "@/components/ChatWidget";
 
 export const metadata: Metadata = {
   title: "SWAYAM 2025",
@@ -24,6 +25,7 @@ export default function RootLayout({
           <NavBar />
           {children}
           <Toaster richColors />
+          <ChatWidget />
         </NextAuthProvider>
         <Footer />
       </body>

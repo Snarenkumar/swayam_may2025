@@ -5,8 +5,6 @@ import Gallery from "@/components/Gallery";
 import Sponsors from "@/components/Sponsors";
 import Contact from "@/components/Contact";
 
-import ChatWidget from "@/components/ChatWidget"; // Import ChatWidget here
-
 export default function Home() {
   return (
     <>
@@ -16,8 +14,6 @@ export default function Home() {
       <Gallery />
       <Sponsors />
       <Contact />
-      {/* ChatWidget rendered as a fixed-position component */}
-      <ChatWidget /> {/* This is where the chatbot will appear */}
     </>
   );
 }

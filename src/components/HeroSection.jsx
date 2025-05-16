@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <main className="h-[80vh] lg:h-[90vh] flex flex-col justify-center items-center">
+    <main className="h-[80vh] lg:h-[85vh] flex flex-col justify-center items-center">
       <Image
         src="/assets/SwayamLogo.png"
         alt="SwayamLogo"
@@ -19,9 +19,10 @@ const HeroSection = () => {
       >
         VIRASAT
       </h1>
+      <p className="my-5 text-xl">On 23rd & 24th may</p>
 
       <button
-        className={`cursor-pointer mx-auto block border border-[#5F4A37] bg-[#f9efd1] text-[#5F4A37] px-3 py-2 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl shadow-lg text-sm sm:text-base mt-5 sm:mt-6`}
+        className={`cursor-pointer mx-auto block border border-[#5F4A37] bg-[#f9efd1] text-[#5F4A37] px-3 py-2 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl shadow-lg text-sm sm:text-base`}
       >
         <Link href={"/events"}>Explore Events</Link>
       </button>
