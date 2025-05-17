@@ -642,7 +642,6 @@ export const eventsData = {
         "Engage in lively intellectual battles, where every argument sharpens your wit. Join forces to tackle critical topics, presenting perspectives with structure and precision. It's a stage to reason, refute, and redefine the narrative.",
       rules: [
         "Teams of 2 members.",
-        "Time limit: 15 minutes per round.",
         "Topics provided just before the debate.",
         "Opening: 4 minutes per team.",
         "Rebuttals: 5 minutes per team.",
@@ -698,7 +697,6 @@ export const eventsData = {
         "Solo event",
         "Languages include English and Hindi",
         "Participants must bid for words and compose a poem.",
-        "Time limit: 1hr.",
         "20 minutes for the word auction.",
         "30 minutes to write your poem.",
         "2 minutes to perform on stage, slam poetry style.",
