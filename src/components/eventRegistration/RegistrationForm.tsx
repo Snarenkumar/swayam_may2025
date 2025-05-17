@@ -318,6 +318,7 @@ export default function EventRegistration({
                 razorpay_payment_id: response.razorpay_payment_id,
                 razorpay_signature: response.razorpay_signature,
                 registrationId: registeredBefore?.id || registrationId,
+                registration_fee,
               });
 
               toast.success("Payment was Successful!");

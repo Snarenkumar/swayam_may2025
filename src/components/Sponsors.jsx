@@ -11,12 +11,12 @@ const Sponsors = () => {
           Sponsors
         </h2>
         <Image
-          src={"/assets/mvjLogo.png"}
+          src={"/assets/mvjLogo.webp"}
           width={200}
           height={200}
           className="mx-auto my-12"
-          alt="Sponsors"
-        ></Image>
+          alt="MVJCE Logo"
+        />
       </FadeInBlock>
     </section>
   );

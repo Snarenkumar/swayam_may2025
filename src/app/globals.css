@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -60,57 +59,56 @@
   --radius: 0.625rem;
 
   /* Base Colors */
-  --background: oklch(0.97 0.06 85); /* #fff4d4 */
-  --foreground: oklch(0.35 0.07 50); /* #5f4a37 */
+  --background: oklch(0.975 0.035 95); /* #fdf5d8 - light honey */
+  --foreground: oklch(0.35 0.07 50); /* #5f4a37 - elegant brown */
 
-  /* Cards and Popovers */
-  --card: oklch(0.97 0.06 85);
-  --card-foreground: oklch(0.35 0.07 50);
+  /* Primary Colors (used for active tab bg, buttons, etc.) */
+  --primary: oklch(0.55 0.09 50); /* #a67850 - soft brown */
+  --primary-foreground: oklch(0.99 0.015 95); /* #fffaf0 - cream */
 
-  --popover: oklch(0.98 0.05 85);
-  --popover-foreground: oklch(0.35 0.07 50);
-
-  /* Primary Colors */
-  --primary: oklch(0.45 0.14 55); /* Darker brown for action */
-  --primary-foreground: oklch(0.98 0.03 85); /* Light cream for contrast */
-
-  /* Secondary Colors */
-  --secondary: oklch(0.88 0.05 85); /* Soft light yellow */
+  /* Secondary (optional fallback) */
+  --secondary: oklch(0.88 0.05 85); /* soft beige yellow */
   --secondary-foreground: oklch(0.35 0.07 50);
 
-  /* Muted */
-  --muted: oklch(0.9 0.03 85); /* Very soft beige */
-  --muted-foreground: oklch(0.5 0.04 50); /* Muted brown */
+  /* Muted (used for inactive tabs and subtle UI) */
+  --muted: oklch(0.975 0.035 95); /* same as background */
+  --muted-foreground: oklch(0.35 0.07 50); /* same elegant brown */
 
-  /* Accent */
-  --accent: oklch(0.85 0.09 85); /* Warm honey */
+  /* Accent (if needed for hover or highlight) */
+  --accent: oklch(0.88 0.04 85); /* light toast beige */
   --accent-foreground: oklch(0.35 0.07 50);
 
+  /* Border/Input */
+  --border: oklch(0.88 0.02 90); /* light wheat */
+  --input: oklch(0.88 0.02 90);
+  --ring: oklch(0.72 0.08 75); /* #c8a07e - soft ring on focus */
+
+  /* Tabs and Cards */
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+
   /* Destructive */
-  --destructive: oklch(0.55 0.24 27); /* Soft red */
-  --destructive-foreground: oklch(0.98 0.03 85);
+  --destructive: oklch(0.55 0.24 27); /* muted red */
+  --destructive-foreground: oklch(0.99 0.015 95);
 
-  /* Borders and Input */
-  --border: oklch(0.85 0.03 85);
-  --input: oklch(0.85 0.03 85);
-  --ring: oklch(0.65 0.05 85);
-
-  /* Chart Colors */
-  --chart-1: oklch(0.6 0.2 45); /* Warm orange */
-  --chart-2: oklch(0.55 0.18 90); /* Goldenrod */
-  --chart-3: oklch(0.5 0.1 150); /* Muted green */
-  --chart-4: oklch(0.75 0.16 80); /* Soft yellow */
-  --chart-5: oklch(0.4 0.13 20); /* Earthy brown */
+  /* Chart (unchanged) */
+  --chart-1: oklch(0.6 0.2 45);
+  --chart-2: oklch(0.55 0.18 90);
+  --chart-3: oklch(0.5 0.1 150);
+  --chart-4: oklch(0.75 0.16 80);
+  --chart-5: oklch(0.4 0.13 20);
 
   /* Sidebar */
   --sidebar: oklch(0.96 0.05 85);
   --sidebar-foreground: oklch(0.35 0.07 50);
   --sidebar-primary: oklch(0.45 0.14 55);
-  --sidebar-primary-foreground: oklch(0.98 0.03 85);
-  --sidebar-accent: oklch(0.85 0.09 85);
-  --sidebar-accent-foreground: oklch(0.35 0.07 50);
-  --sidebar-border: oklch(0.85 0.03 85);
-  --sidebar-ring: oklch(0.65 0.05 85);
+  --sidebar-primary-foreground: oklch(0.99 0.015 95);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 @layer base {

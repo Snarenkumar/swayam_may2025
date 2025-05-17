@@ -59,7 +59,7 @@ export function TicketDownload({
       <!-- Header with Logos -->
       <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10mm;">
         <div>
-          <img src="/assets/mvjLogo.png" alt="College Logo" style="height: 20mm; width: auto; object-fit: contain" />
+          <img src="/assets/mvjLogo.webp" alt="College Logo" style="height: 20mm; width: auto; object-fit: contain" />
           <img src="/assets/SwayamLogo.png" alt="Event Logo" style="height: 20mm; width: auto; object-fit: contain;" />
         </div>
         <div style="margin-left:8mm">
@@ -111,7 +111,7 @@ export function TicketDownload({
           <!-- QR Code Section -->
           <div style="background: white; padding: 5mm; border-radius: 3mm; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 5mm; text-align: center;">
             <img src="${qrCodeDataURL}" style="width: 50mm; height: 50mm; display: block; margin: 0 auto; image-rendering: pixelated;" />
-            <p style="font-size: 10pt; margin: 3mm 0 0 0; color: #666;">Scan to verify registration</p>
+            <p style="font-size: 10pt; margin: 3mm 0 0 0; color: #666;">QR code for verification</p>
           </div>
 
           <!-- Payment Info -->

@@ -7,6 +7,7 @@ export interface VerifyBody {
   razorpay_payment_id: string;
   razorpay_signature: string;
   registrationId: string;
+  registration_fee: number;
 }
 
 export async function POST(request: NextRequest) {
@@ -16,6 +17,7 @@ export async function POST(request: NextRequest) {
       razorpay_payment_id,
       razorpay_signature,
       registrationId,
+      registration_fee,
     }: VerifyBody = await request.json();
     console.log(registrationId);
 
@@ -45,6 +47,7 @@ export async function POST(request: NextRequest) {
         },
         data: {
           paymentId: razorpay_payment_id,
+          paymentAmount: registration_fee,
         },
       });
       return NextResponse.json({

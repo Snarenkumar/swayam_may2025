@@ -10,9 +10,8 @@ export default function AdminLayout({ children }) {
         className={`w-screen antialiased min-h-screen relative overflow-x-hidden bg-contain bg-center bg-[url('/assets/AndroidBackground.png')] md:bg-[url('/assets/Background.png')] bg-fixed text-[#5F4A37] scroll-smooth`}
       >
         <NextAuthProvider>
-          <div className="min-h-screen flex flex-col">
-            {/* Admin Header */}
-            {/* <header className="bg-gray-800 text-white p-4">
+          {/* Admin Header */}
+          {/* <header className="bg-gray-800 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <h1 className="text-xl font-bold">Swayam Admin</h1>
@@ -20,8 +19,8 @@ export default function AdminLayout({ children }) {
         </div>
       </header> */}
 
-            {/* Admin Navigation */}
-            {/* <nav className="bg-gray-700 text-white py-2">
+          {/* Admin Navigation */}
+          {/* <nav className="bg-gray-700 text-white py-2">
         <div className="container mx-auto">
           <ul className="flex space-x-6">
             <li>
@@ -44,11 +43,10 @@ export default function AdminLayout({ children }) {
         </div>
       </nav> */}
 
-            {/* Admin Content */}
-            <main className="flex-grow bg-gray-100">{children}</main>
+          {/* Admin Content */}
+          <main>{children}</main>
 
-            {/* Removed the footer as requested */}
-          </div>
+          {/* Removed the footer as requested */}
         </NextAuthProvider>
       </body>
     </html>

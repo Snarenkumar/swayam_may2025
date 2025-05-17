@@ -30,7 +30,7 @@ export const eventsData = {
       no: 1,
       name: "Vocal Vistar - Where every voice finds its spotlight",
       description:
-        "Celebrate the power of melody in this solo singing event that brings out the soul of India’s musical heritage. Whether you prefer classical or contemporary, let your voice echo the spirit of VIRASAT.",
+        "Celebrate the power of melody in this solo singing event that brings out the soul of India's musical heritage. Whether you prefer classical or contemporary, let your voice echo the spirit of VIRASAT.",
       rules: [
         "Solo event.",
         "Time limit: 4 minutes (including setup).",
@@ -183,7 +183,7 @@ export const eventsData = {
       no: 1,
       name: "Nritya Veer - The Brave Solo Performer[INDIAN SOLO]",
       description:
-        "Celebrate the elegance of India’s traditional dance forms with mesmerizing moves and vibrant expressions. Let your performance reflect the cultural hues of VIRASAT.",
+        "Celebrate the elegance of India's traditional dance forms with mesmerizing moves and vibrant expressions. Let your performance reflect the cultural hues of VIRASAT.",
       rules: [
         "Individual event.",
         "Time limit: 3+1 minute (including setup).",
@@ -282,7 +282,7 @@ export const eventsData = {
       no: 5,
       name: "Groove Riot [WESTERN GROUP]",
       description:
-        "Showcase your team’s creativity and energy through captivating choreography that represents the vibrancy of Western dance styles.",
+        "Showcase your team's creativity and energy through captivating choreography that represents the vibrancy of Western dance styles.",
       rules: [
         "Teams of 8-15 members.",
         "Time limit: 5+2 minutes (including setup and conclusion).",
@@ -305,9 +305,9 @@ export const eventsData = {
     {
       id: "clw3q9v6e001018l0h6qy7q1z",
       no: 6,
-      name: "Parampara – The Eternal Rhythm",
+      name: "Parampara - The Eternal Rhythm",
       description:
-        "Parampara is a vibrant celebration of India’s rich cultural tapestry through the timeless language of classical dance. Rooted in ancient traditions, our performance brings together the grace of Bharatanatyam, the rhythm of Kathak, and the expression of Odissi (or your chosen style), weaving stories from mythology, nature, and devotion.",
+        "Parampara is a vibrant celebration of India's rich cultural tapestry through the timeless language of classical dance. Rooted in ancient traditions, our performance brings together the grace of Bharatanatyam, the rhythm of Kathak, and the expression of Odissi (or your chosen style), weaving stories from mythology, nature, and devotion.",
       rules: [
         "Teams of 8-12 members.",
         "Time limit: 5+1",
@@ -562,13 +562,13 @@ export const eventsData = {
     {
       id: "clw3q9v6e002008l0h6qy7q1z",
       no: 1,
-      name: "ChronoChatter – Timeless talk, 60 seconds sharp.",
+      name: "ChronoChatter - Timeless talk, 60 seconds sharp.",
       description:
         "Test your wit and spontaneity in this fast-paced speaking challenge. Keep your thoughts sharp, your words sharper, and impress the audience in “JUST A MINUTE”.",
       rules: [
         "Individual event.",
         "Avoid hesitation, repetition, or deviation.",
-        "The use of Queen’s English is encouraged.",
+        "The use of Queen's English is encouraged.",
       ],
       registration_fee: 150,
       prizes: {
@@ -662,9 +662,9 @@ export const eventsData = {
     {
       id: "clw3q9v6e002408l0h6qy7q1z",
       no: 5,
-      name: "Inkwell of the Unseen – The ink of emotions touched, not watched.",
+      name: "Inkwell of the Unseen - The ink of emotions touched, not watched.",
       description:
-        "From pen to paper, now from perception to prose, writing demands more than fleeting feelings in your mind. Don’t let your senses deceive you; go beyond impressions, unearthing truths that lie beneath. To be a writer is to shape raw sensations into vivid, unforgettable creations.",
+        "From pen to paper, now from perception to prose, writing demands more than fleeting feelings in your mind. Don't let your senses deceive you; go beyond impressions, unearthing truths that lie beneath. To be a writer is to shape raw sensations into vivid, unforgettable creations.",
       rules: [
         "Individual event.",
         "Time Limit: 5 minutes to interact with the object and 30 minutes to write.",
@@ -687,13 +687,13 @@ export const eventsData = {
     {
       id: "clw3q9v6e002508l0h6qy7q1z",
       no: 6,
-      name: "The Poetic Gavel - Poet’s Auction",
+      name: "The Poetic Gavel - Poet's Auction",
       description:
-        "Step into the world of Slam Poetry but with a twist! The Poet’s Auction challenges teams to craft powerful, original poems while battling in an exhilarating auction for their words. Combine poetic artistry with strategy and performance as you bring your creations to life.",
+        "Step into the world of Slam Poetry but with a twist! The Poet's Auction challenges teams to craft powerful, original poems while battling in an exhilarating auction for their words. Combine poetic artistry with strategy and performance as you bring your creations to life.",
       rules: [
-        "Participation as a team of 2.",
+        "Solo event",
         "Participants must bid for words and compose a poem.",
-        "Time limit: 60 minutes.",
+        "Time limit: 2hrs.",
       ],
       registration_fee: 200,
       prizes: {
@@ -705,8 +705,8 @@ export const eventsData = {
         { name: "Mussarrat", phone: "9353801953" },
         { name: "Shivani", phone: "7760783977" },
       ],
-      minTeamMembers: 2,
-      maxTeamMembers: 2,
+      minTeamMembers: 1,
+      maxTeamMembers: 1,
       image: "/assets/clubevents/saahitya/poets_auction.svg",
     },
     {
@@ -716,9 +716,9 @@ export const eventsData = {
       description:
         "Unleash your inner designer to create stunning narratives through visuals. Build upon each domino for a unique chain of ideas.",
       rules: [
-        "Teams of 2 participants.",
-        "Time limit: 90 minutes.",
-        "Twists revealed every 15 mins.",
+        "Solo Event.",
+        "Time limit: 75 minutes.",
+        "Twists revealed every 10 mins.",
         "Submission in digital (JPEG, PNG, or PDF).",
       ],
       registration_fee: 150,
@@ -731,8 +731,8 @@ export const eventsData = {
         { name: "Aravind", phone: "9740181866" },
         { name: "Sanskritthi", phone: "9663395425" },
       ],
-      minTeamMembers: 2,
-      maxTeamMembers: 2,
+      minTeamMembers: 1,
+      maxTeamMembers: 1,
       image: "/assets/clubevents/saahitya/design_domino.svg",
     },
     {

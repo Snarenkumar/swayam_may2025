@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 
-
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, Home, Calendar, BookOpen, Grid } from "lucide-react";
@@ -95,13 +94,15 @@ const NavBar = () => {
     <nav className="sticky top-0 z-40 w-full lg:top-4">
       {/* Desktop Navigation */}
       <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }} className="hidden md:block backdrop-blur-sm bg-[#5F4A37]/10 border border-[#5F4A37]/30 shadow-lg lg:rounded-xl max-w-5xl mx-auto">
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="hidden md:block backdrop-blur-sm bg-[#5F4A37]/10 border border-[#5F4A37]/30 shadow-lg lg:rounded-xl max-w-5xl mx-auto"
+      >
         <div className={`flex justify-around items-center p-3 relative`}>
           <Link href={"/"}>
             <Image
-              src="/assets/mvjLogo.png"
+              src="/assets/mvjLogo.webp"
               alt="MVJLogo"
               width={120}
               height={120}
@@ -137,14 +138,14 @@ const NavBar = () => {
       <div className="md:hidden backdrop-blur-sm bg-[#5F4A37]/10 border-b border-[#5F4A37]/30 shadow-lg">
         <div className={`flex items-center justify-between px-4 py-2`}>
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <Link href={"/"} className="flex-shrink-0">
             <Image
-              src="/assets/mvjLogo.png"
+              src="/assets/mvjLogo.webp"
               alt="MVJLogo"
               width={80}
               height={80}
             />
-          </div>
+          </Link>
 
           {/* Mobile icons - Only profile and hamburger */}
           <div className="flex items-center gap-5">
@@ -192,7 +193,6 @@ const NavBar = () => {
                       </a>
                     </li>
                   </DropdownMenuItem>
-                  <DropdownMenuSeparator />
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
