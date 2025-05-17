@@ -644,6 +644,9 @@ export const eventsData = {
         "Teams of 2 members.",
         "Time limit: 15 minutes per round.",
         "Topics provided just before the debate.",
+        "Opening: 4 minutes per team.",
+        "Rebuttals: 5 minutes per team.",
+        "Closing: 2 minutes per team",
       ],
       registration_fee: 300,
       prizes: {
@@ -667,10 +670,11 @@ export const eventsData = {
         "From pen to paper, now from perception to prose, writing demands more than fleeting feelings in your mind. Don't let your senses deceive you; go beyond impressions, unearthing truths that lie beneath. To be a writer is to shape raw sensations into vivid, unforgettable creations.",
       rules: [
         "Individual event.",
-        "Time Limit: 5 minutes to interact with the object and 30 minutes to write.",
+        "English only",
+        "Time Limit: 15 minutes to interact with the object and 45 minutes to write.",
         "Word Limit: 200 or 300 words.",
       ],
-      registration_fee: 200,
+      registration_fee: 150,
       prizes: {
         first: "3,000",
         second: "2,000",
@@ -692,8 +696,12 @@ export const eventsData = {
         "Step into the world of Slam Poetry but with a twist! The Poet's Auction challenges teams to craft powerful, original poems while battling in an exhilarating auction for their words. Combine poetic artistry with strategy and performance as you bring your creations to life.",
       rules: [
         "Solo event",
+        "Languages include English and Hindi",
         "Participants must bid for words and compose a poem.",
-        "Time limit: 2hrs.",
+        "Time limit: 1hr.",
+        "20 minutes for the word auction.",
+        "30 minutes to write your poem.",
+        "2 minutes to perform on stage, slam poetry style.",
       ],
       registration_fee: 200,
       prizes: {
