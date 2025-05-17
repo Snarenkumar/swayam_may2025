@@ -1,12 +1,19 @@
+"use client";
 import Image from "next/image";
 import "../font.css";
 import { getClubEvents } from "@/lib/eventsData";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function NrityatrixPage() {
   const event = getClubEvents("Nrityatrix");
   return (
-    <div className="bg-transparent text-[#5F4A37] font-serif min-h-screen pt-8">
+     <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 2 }}
+  className="bg-transparent text-[#5F4A37] font-serif min-h-screen"
+>
       {/* Title */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 my-6 text-center">
         <Image
@@ -28,10 +35,14 @@ export default function NrityatrixPage() {
             return "";
           }
           return (
-            <div
-              key={event.no}
-              className="bg-[#E1DABD] custom-shadow rounded-3xl p-6 max-w-4xl w-full relative"
-            >
+            <motion.div
+  key={event.no}
+  initial={{ opacity: 0, x: -100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="bg-[#E1DABD] custom-shadow rounded-3xl p-6 max-w-4xl w-full relative"
+>
               <div className="absolute -top-12 left-2 z-10">
                 <div className="pentagon text-black font-bold flex items-center justify-center text-lg">
                   {event.no}
@@ -87,7 +98,7 @@ export default function NrityatrixPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
@@ -102,6 +113,6 @@ export default function NrityatrixPage() {
           <p>Ashmita: 7411061287</p>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
