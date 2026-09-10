@@ -9,7 +9,7 @@
 
 ---
 
-Welcome to the official repository for the **Swayam Cultural Fest** website, a collaboration between **SDC MVJCE**, **Inscribe**, and **GDG MVJCE**.  
+Welcome to the official repository for the **Swayam Cultural Fest** website, a collaboration between **SDC MVJCE**, **Inscribe** ., and **GDG MVJCE**.  
 This platform is designed to showcase the vibrant culture, events, and spirit of **Swayam 2025** at **MVJ College of Engineering**!
 
 ---
